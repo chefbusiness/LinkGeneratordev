@@ -984,6 +984,245 @@ class TranslationManager {
                         "final_thoughts": "Réflexions finales"
                     }
                 }
+            },
+            'de': {
+                "meta": {
+                    "title": "Mailto-Link-Generator - Erstellen Sie professionelle E-Mail-Links sofort",
+                    "description": "Generieren Sie professionelle Mailto-Links mit vorausgefülltem Betreff, Text, CC, BCC und mehr. Perfekt für Entwickler, Marketer und Unternehmen. Kostenloses Online-Tool.",
+                    "keywords": "mailto link generator, email link ersteller, mailto URL, email marketing, webentwicklung, kontaktformulare"
+                },
+                "header": {
+                    "title": "Mailto-Link-Generator",
+                    "subtitle": "Erstellen Sie professionelle E-Mail-Links sofort"
+                },
+                "form": {
+                    "email_label": "An",
+                    "email_placeholder": "empfaenger@beispiel.de",
+                    "subject_label": "Betreff",
+                    "subject_placeholder": "E-Mail-Betreff",
+                    "body_label": "Text",
+                    "body_placeholder": "E-Mail-Inhalt...",
+                    "cc_label": "Cc",
+                    "cc_placeholder": "kopie@beispiel.de",
+                    "bcc_label": "Bcc",
+                    "bcc_placeholder": "blindkopie@beispiel.de",
+                    "link_text": "Link-Text",
+                    "generate_button": "Meinen Mailto-Link generieren",
+                    "copy_button": "Kopieren",
+                    "test_button": "Link testen",
+                    "validation": {
+                        "to_required": "Bitte geben Sie mindestens eine E-Mail-Adresse im \"An\"-Feld ein",
+                        "invalid_email": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+                    }
+                },
+                "results": {
+                    "title": "Mailto-Link",
+                    "html_code_title": "HTML-Code",
+                    "test_title": "Link testen",
+                    "copy_button": "Kopieren",
+                    "copy_success": "Kopiert!",
+                    "copy_error": "Fehler beim Kopieren in die Zwischenablage"
+                },
+                "donation": {
+                    "title": "Unterstützen Sie dieses Projekt",
+                    "description": "Wenn dieses Tool hilfreich war, erwägen Sie, seine Entwicklung mit einer kleinen Spende zu unterstützen.",
+                    "button_text": "Spendieren Sie mir einen Kaffee ☕",
+                    "button": "Spendieren Sie mir einen Kaffee",
+                    "support_request": "Wenn dieses Tool für Sie hilfreich war, erwägen Sie, seine Entwicklung mit einer kleinen Kaffee-Spende zu unterstützen. Jeder Beitrag hilft mir, mehr Zeit für die Verbesserung und Wartung solcher Tools zu investieren.",
+                    "appreciation": "Ihre Unterstützung bedeutet mir die Welt! ☕✨",
+                    "thank_you": "Vielen Dank, dass Sie mein Tool verwenden, und ich hoffe, es bringt Effizienz in Ihre Projekte!",
+                    "signature": "—John",
+                    "contact": "Fragen oder Feedback? Erreichen Sie mich unter john@chefbusiness.co"
+                },
+                "footer": {
+                    "copyright": "© 2024 MailtoGen Pro. Alle Rechte vorbehalten.",
+                    "privacy": "Datenschutzrichtlinie",
+                    "terms": "Nutzungsbedingungen",
+                    "contact": "Kontakt"
+                },
+                "guide": {
+                    "title": "Vollständiger Mailto-Link-Leitfaden",
+                    "intro": {
+                        "subtitle": "Meistern Sie die Kunst der Mailto-Links mit unserem umfassenden Leitfaden. Lernen Sie, professionelle E-Mail-Links zu erstellen, die einwandfrei auf allen Plattformen und E-Mail-Clients funktionieren.",
+                        "donation_thanks": "An die großzügigen Menschen, die bereits gespendet haben\nVielen Dank! ❤️",
+                        "main_message": "Noch wichtiger ist, lassen Sie mich Ihnen über Mailto-Links erzählen, damit Sie wissen, wie Sie sie selbst generieren können.",
+                        "description": "Wir werden sowohl die technische Struktur als auch die praktische Implementierung erkunden, um Ihnen bei der Erstellung effektiver E-Mail-Links zu helfen."
+                    },
+                    "what_are_mailto": {
+                        "title": "Mailto-Links verstehen",
+                        "description": "Ein Mailto-Link ist ein mächtiger HTML-Hyperlink, der sofort den Standard-E-Mail-Client des Benutzers mit vorausgefüllten Informationen öffnet. Dies eliminiert die Notwendigkeit für Benutzer, E-Mail-Adressen manuell zu kopieren, und macht die Kommunikation nahtlos und professionell."
+                    },
+                    "basic_syntax": {
+                        "title": "Grundlegende Mailto-Syntax",
+                        "intro": "Jeder Mailto-Link beginnt mit dem Protokoll-Identifikator:",
+                        "simple_example": "Einfache E-Mail-Links erstellen",
+                        "description": "Die grundlegendste Form enthält nur die E-Mail-Adresse des Empfängers unmittelbar nach dem Doppelpunkt:",
+                        "clickable_description": "Dies erstellt einen anklickbaren Link, der den E-Mail-Client des Benutzers mit dem vorausgefüllten Empfängerfeld öffnet.",
+                        "with_subject": "Betreffzeilen hinzufügen",
+                        "subject_description": "Betreffzeilen machen Ihre Mailto-Links professioneller und helfen Empfängern, den Zweck der E-Mail sofort zu verstehen.",
+                        "subject_example": "Grundlegendes Betreff-Beispiel",
+                        "subject_example_description": "Hier ist eine Geschäftsanfrage mit einer klaren Betreffzeile:"
+                    },
+                    "advanced_features": {
+                        "title": "Erweiterte Empfängerverwaltung",
+                        "description": "Während einzelne Empfänger am zuverlässigsten sind, können Sie mehrere Empfänger mit spezifischen Techniken einbeziehen. Die Kompatibilität variiert jedoch zwischen E-Mail-Clients, daher sind gründliche Tests unerlässlich.",
+                        "multiple_recipients": {
+                            "title": "Mehrere Empfänger im AN-Feld",
+                            "description": "Für mehrere Hauptempfänger trennen Sie E-Mail-Adressen mit Kommas (ohne Leerzeichen):"
+                        },
+                        "alternative_separator": {
+                            "title": "Alternative Trennzeichen-Methode",
+                            "description": "Wenn Kommas bei bestimmten E-Mail-Clients nicht funktionieren, versuchen Sie Semikolons:"
+                        },
+                        "distributed_recipients": {
+                            "title": "Empfohlener Ansatz: Verteilte Empfänger",
+                            "description": "Die zuverlässigste Methode verteilt Empfänger auf AN-, CC- und BCC-Felder:"
+                        },
+                        "pro_tip": "Profi-Tipp: Testen Sie Ihre Mailto-Links immer in verschiedenen E-Mail-Clients (Gmail, Outlook, Apple Mail) vor der Bereitstellung."
+                    },
+                    "empty_recipients": {
+                        "title": "Leere Empfänger handhaben",
+                        "description": "Das Erstellen von Mailto-Links ohne vordefinierte Empfänger ermöglicht es Benutzern, ihre eigenen Empfänger zu wählen. Obwohl weniger häufig, hat dieser Ansatz spezifische Anwendungsfälle wie \"Per E-Mail teilen\"-Buttons.",
+                        "standard_format": {
+                            "title": "Standard-Format für leere Empfänger",
+                            "description": "Der kompatibelste Ansatz verwendet ein Fragezeichen direkt nach mailto:"
+                        },
+                        "alternative_formats": {
+                            "title": "Alternative Formate",
+                            "description": "Einige E-Mail-Clients akzeptieren diese Variationen:"
+                        },
+                        "important_note": "Wichtig: Links mit leeren Empfängern haben begrenzte Kompatibilität. Testen Sie gründlich vor der Implementierung."
+                    },
+                    "parameter_structure": {
+                        "title": "Parameterstruktur und Syntax",
+                        "description": "Mailto-Links verwenden URL-Parameter-Syntax mit spezifischen Trennzeichen:",
+                        "question_mark": "Fragezeichen (?): Trennt die E-Mail-Adresse vom ersten Parameter",
+                        "ampersand": "Und-Zeichen (&): Trennt zusätzliche Parameter",
+                        "examples_title": "Beispiele für Parameterstruktur"
+                    },
+                    "encoding_guide": {
+                        "title": "URL-Kodierung Grundlagen",
+                        "description": "Sonderzeichen in Mailto-Links müssen URL-kodiert werden, um ordnungsgemäße Funktionalität in allen E-Mail-Clients und Browsern zu gewährleisten.",
+                        "common_characters": "Häufige Zeichenkodierungen",
+                        "common_characters_description": "Hier sind die am häufigsten verwendeten URL-Kodierungen für Mailto-Links:",
+                        "why_encoding_matters": {
+                            "title": "Warum Kodierung wichtig ist",
+                            "description": "Ordnungsgemäße Kodierung stellt sicher, dass Ihre Mailto-Links konsistent funktionieren in:",
+                            "browsers": "Verschiedenen Webbrowsern (Chrome, Firefox, Safari, Edge)",
+                            "email_clients": "Verschiedenen E-Mail-Clients (Gmail, Outlook, Apple Mail, Thunderbird)",
+                            "platforms": "Mobilen und Desktop-Plattformen"
+                        },
+                        "pro_tip": "💡 Profi-Tipp: Verwenden Sie unseren Mailto-Link-Generator oben, um automatisch alle Kodierungen zu handhaben!"
+                    },
+                    "encoding": {
+                        "characters": {
+                            "space": "%20 = Leerzeichen",
+                            "exclamation": "%21 = ! (Ausrufezeichen)",
+                            "quote": "%22 = \" (Anführungszeichen)",
+                            "ampersand": "%26 = & (Und-Zeichen)",
+                            "comma": "%2C = , (Komma)",
+                            "colon": "%3A = : (Doppelpunkt)",
+                            "question": "%3F = ? (Fragezeichen)",
+                            "linebreak": "%0A = Zeilenumbruch"
+                        }
+                    },
+                    "complete_templates": {
+                        "title": "Vollständige E-Mail-Vorlagen",
+                        "description": "Die Kombination von Betreffzeilen und Textinhalt erstellt umfassende E-Mail-Vorlagen, die Zeit für Sie und Ihre Empfänger sparen.",
+                        "customer_support": {
+                            "title": "Kundensupport-Vorlage",
+                            "description": "Perfekt für Helpdesk- oder Support-Seiten:"
+                        }
+                    },
+                    "professional_examples": {
+                        "title": "Professionelle Anwendungsfälle",
+                        "description": "Hier ist eine umfassende Geschäfts-E-Mail-Vorlage mit allen Parametern:",
+                        "project_collaboration": {
+                            "title": "Projektzusammenarbeit E-Mail",
+                            "to": "An: project.manager@company.com",
+                            "cc": "Cc: team.lead@company.com",
+                            "bcc": "Bcc: archive@company.com",
+                            "subject": "Betreff: Projektvorschlag Einreichung",
+                            "body": "Text: Lieber Projektmanager, ich reiche unseren Q4-Projektvorschlag zur Überprüfung ein. Bitte finden Sie die wichtigsten Details unten und lassen Sie mich wissen, wenn Sie zusätzliche Informationen benötigen. Mit freundlichen Grüßen, [Ihr Name]"
+                        },
+                        "additional_templates": {
+                            "title": "Zusätzliche professionelle Vorlagen",
+                            "meeting_request": "Besprechungsanfrage:"
+                        }
+                    },
+                    "html_implementation": {
+                        "title": "HTML-Implementierung",
+                        "description": "Die Umwandlung Ihres Mailto-Links in anklickbares HTML erfordert ordnungsgemäße Anker-Tag-Struktur und Attribute.",
+                        "basic_structure": {
+                            "title": "Grundlegende HTML-Struktur",
+                            "description": "HTML-Anker-Tags bestehen aus öffnenden und schließenden Elementen:"
+                        },
+                        "link_text": {
+                            "title": "Link-Text hinzufügen",
+                            "description": "Der Text zwischen den Tags wird zum anklickbaren Link-Text:"
+                        },
+                        "href_attribute": {
+                            "title": "Das href-Attribut hinzufügen",
+                            "description": "Das href-Attribut enthält Ihren Mailto-Link:"
+                        },
+                        "accessibility": {
+                            "title": "Verbessertes HTML mit Barrierefreiheit",
+                            "description": "Für bessere Barrierefreiheit und Benutzererfahrung fügen Sie beschreibende Attribute hinzu:"
+                        },
+                        "live_example": {
+                            "title": "Live-Beispiel",
+                            "description": "So erscheint der Link für Benutzer:"
+                        },
+                        "demo_link": "Demo anfordern"
+                    },
+                    "best_practices": {
+                        "title": "Best Practices und Tipps",
+                        "compatibility": {
+                            "title": "Plattformübergreifende Kompatibilität",
+                            "test_extensively": "Umfassend testen: Überprüfen Sie, ob Links in wichtigen E-Mail-Clients funktionieren",
+                            "keep_simple": "Einfach halten: Vermeiden Sie zu komplexe Parameterkombinationen",
+                            "mobile_first": "Mobile-First: Stellen Sie sicher, dass Links auf mobilen Geräten gut funktionieren",
+                            "fallback_options": "Fallback-Optionen: Bieten Sie alternative Kontaktmethoden an"
+                        },
+                        "user_experience": {
+                            "title": "Benutzererfahrung-Richtlinien",
+                            "clear_text": "Klarer Link-Text: Verwenden Sie beschreibenden Text, der die Aktion erklärt",
+                            "reasonable_defaults": "Vernünftige Standards: Füllen Sie hilfreiche Informationen vor, ohne überwältigend zu sein",
+                            "privacy": "Datenschutz-Überlegung: Seien Sie achtsam bei den Informationen, die Sie vorab ausfüllen",
+                            "professional_tone": "Professioneller Ton: Verwenden Sie angemessene Sprache für Ihr Publikum"
+                        },
+                        "technical": {
+                            "title": "Technische Überlegungen",
+                            "character_limits": "Zeichenbegrenzungen: Einige E-Mail-Clients haben URL-Längenbeschränkungen",
+                            "encoding_accuracy": "Kodierungsgenauigkeit: Kodieren Sie Sonderzeichen immer ordnungsgemäß",
+                            "security": "Sicherheitsbewusstsein: Vermeiden Sie es, sensible Informationen in URLs einzuschließen",
+                            "analytics": "Analytics-Tracking: Überlegen Sie, wie Sie Mailto-Link-Engagement verfolgen können"
+                        }
+                    },
+                    "final_thoughts": {
+                        "title": "Abschließende Gedanken",
+                        "description": "Mailto-Links sind ein mächtiges Werkzeug zur Rationalisierung der Kommunikation zwischen Websites und Benutzern. Wenn sie korrekt implementiert werden, bieten sie eine nahtlose Brücke zwischen Web-Inhalten und E-Mail-Kommunikation.",
+                        "key_success": "Denken Sie daran, dass der Schlüssel zu einer erfolgreichen Mailto-Implementierung darin liegt, die Bedürfnisse Ihrer Benutzer zu verstehen, plattformübergreifend zu testen und Einfachheit zu bewahren, während Sie Wert bieten.",
+                        "conclusion": "Ob Sie Kontaktformulare, Support-Systeme oder Marketing-Kampagnen erstellen, gut gestaltete Mailto-Links können das Benutzerengagement und die Kommunikationseffizienz erheblich verbessern."
+                    },
+                    "additional_resources": {
+                        "title": "Zusätzliche Ressourcen:",
+                        "rfc_6068": "RFC 6068 Spezifikation",
+                        "w3c_html": "W3C HTML-Spezifikation",
+                        "compatibility_testing": "E-Mail-Client-Kompatibilitäts-Testtools",
+                        "encoding_reference": "URL-Kodierung Referenzleitfäden"
+                    },
+                    "toc": {
+                        "simple_email": "Einfache E-Mail-Links erstellen",
+                        "empty_recipient": "Leere Empfänger handhaben",
+                        "parameter_structure": "Parameterstruktur und Syntax",
+                        "subject_lines": "Betreffzeilen hinzufügen",
+                        "complete_emails": "Vollständige E-Mail-Vorlagen",
+                        "professional_examples": "Professionelle Anwendungsfälle",
+                        "html_implementation": "HTML-Implementierung",
+                        "final_thoughts": "Abschließende Gedanken"
+                    }
+                }
             }
         };
     }

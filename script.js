@@ -160,6 +160,53 @@ function hasAnyInput() {
     return Array.from(inputs).some(input => input.value.trim() !== '');
 }
 
+// Function to setup language selector for subdirectory redirects
+function setupLanguageSelector() {
+    const languageOptions = document.querySelectorAll('.language-option');
+    
+    languageOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const selectedLang = option.dataset.lang;
+            
+            // Mapeo de idiomas a subdirectorios
+            const languageUrls = {
+                'en': '/',
+                'es': '/es/',
+                'de': '/de/',
+                'fr': '/fr/',
+                'zh': '/zh/'
+            };
+            
+            // Redirigir al subdirectorio correspondiente
+            if (languageUrls[selectedLang]) {
+                const baseUrl = window.location.origin;
+                window.location.href = baseUrl + languageUrls[selectedLang];
+            }
+        });
+    });
+    
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.language-selector')) {
+            const languageMenu = document.getElementById('languageMenu');
+            if (languageMenu) {
+                languageMenu.classList.remove('show');
+            }
+        }
+    });
+    
+    // Toggle del menú
+    const languageBtn = document.getElementById('languageBtn');
+    if (languageBtn) {
+        languageBtn.addEventListener('click', () => {
+            const languageMenu = document.getElementById('languageMenu');
+            if (languageMenu) {
+                languageMenu.classList.toggle('show');
+            }
+        });
+    }
+}
+
 // Initialize application when DOM is loaded
 document.addEventListener('DOMContentLoaded', async function() {
     try {
@@ -172,6 +219,9 @@ document.addEventListener('DOMContentLoaded', async function() {
             console.warn('TranslationManager not found');
         }
         
+        // Setup language selector for subdirectory redirects
+        setupLanguageSelector();
+        
         // Initialize main app
         initializeApp();
         console.log('Mailto Generator initialized successfully!');
@@ -179,5 +229,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         console.error('Error initializing application:', error);
         // Initialize app anyway without translations
         initializeApp();
+        // Still setup language selector
+        setupLanguageSelector();
     }
 });

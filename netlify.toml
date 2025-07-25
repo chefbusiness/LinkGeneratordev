@@ -5,6 +5,7 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Security headers for all pages
 [[headers]]
   for = "/*"
   [headers.values]
@@ -14,6 +15,7 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
+# Cache optimization for static assets
 [[headers]]
   for = "*.js"
   [headers.values]
@@ -25,11 +27,63 @@
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
+  for = "*.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
   for = "*.json"
   [headers.values]
     Cache-Control = "public, max-age=86400"
     Content-Type = "application/json; charset=utf-8"
 
+# Language-specific headers for SEO
+[[headers]]
+  for = "/es/*"
+  [headers.values]
+    Content-Language = "es"
+
+[[headers]]
+  for = "/de/*"
+  [headers.values]
+    Content-Language = "de"
+
+[[headers]]
+  for = "/fr/*"
+  [headers.values]
+    Content-Language = "fr"
+
+[[headers]]
+  for = "/zh/*"
+  [headers.values]
+    Content-Language = "zh"
+
+# Intelligent language redirects based on Accept-Language header
+[[redirects]]
+  from = "/"
+  to = "/es/"
+  status = 302
+  conditions = {Language = ["es"], Country = ["ES", "MX", "AR", "CO", "PE", "VE", "CL", "EC", "GT", "CU", "BO", "DO", "HN", "PY", "SV", "NI", "CR", "PA", "UY"]}
+
+[[redirects]]
+  from = "/"
+  to = "/de/"
+  status = 302
+  conditions = {Language = ["de"], Country = ["DE", "AT", "CH"]}
+
+[[redirects]]
+  from = "/"
+  to = "/fr/"
+  status = 302
+  conditions = {Language = ["fr"], Country = ["FR", "BE", "CH", "CA"]}
+
+[[redirects]]
+  from = "/"
+  to = "/zh/"
+  status = 302
+  conditions = {Language = ["zh"], Country = ["CN", "TW", "HK", "SG"]}
+
+# Legacy URL redirects
 [[redirects]]
   from = "/generator"
   to = "/#generator"
@@ -45,14 +99,76 @@
   to = "/#understanding-mailto"
   status = 301
 
-# Redirect old domain references (if any)
+# Language-specific legacy redirects
+[[redirects]]
+  from = "/es/generator"
+  to = "/es/#generator"
+  status = 301
+
+[[redirects]]
+  from = "/es/guide"
+  to = "/es/#understanding-mailto"
+  status = 301
+
+[[redirects]]
+  from = "/de/generator"
+  to = "/de/#generator"
+  status = 301
+
+[[redirects]]
+  from = "/de/guide"
+  to = "/de/#understanding-mailto"
+  status = 301
+
+[[redirects]]
+  from = "/fr/generator"
+  to = "/fr/#generator"
+  status = 301
+
+[[redirects]]
+  from = "/fr/guide"
+  to = "/fr/#understanding-mailto"
+  status = 301
+
+[[redirects]]
+  from = "/zh/generator"
+  to = "/zh/#generator"
+  status = 301
+
+[[redirects]]
+  from = "/zh/guide"
+  to = "/zh/#understanding-mailto"
+  status = 301
+
+# Old domain redirects
 [[redirects]]
   from = "https://mailtolinkgenerator.pro/*"
   to = "https://mailtogenpro.com/:splat"
   status = 301
   force = true
 
-# 404 fallback
+# 404 fallbacks - language-specific
+[[redirects]]
+  from = "/es/*"
+  to = "/es/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/de/*"
+  to = "/de/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/fr/*"
+  to = "/fr/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/zh/*"
+  to = "/zh/index.html"
+  status = 200
+
+# Default fallback to English
 [[redirects]]
   from = "/*"
   to = "/index.html"
