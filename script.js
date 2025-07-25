@@ -183,8 +183,7 @@ function setupLanguageSelector() {
             
             // Redirigir al subdirectorio correspondiente
             if (languageUrls[selectedLang]) {
-                const baseUrl = window.location.origin;
-                window.location.href = baseUrl + languageUrls[selectedLang];
+                window.location.href = languageUrls[selectedLang];
             }
         });
     });

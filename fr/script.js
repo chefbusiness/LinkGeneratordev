@@ -213,8 +213,7 @@ function setupLanguageSelector() {
             
             // Rediriger vers le subdirectory correspondant
             if (languageUrls[selectedLang]) {
-                const baseUrl = window.location.origin;
-                window.location.href = baseUrl + languageUrls[selectedLang];
+                window.location.href = languageUrls[selectedLang];
             }
         });
     });
