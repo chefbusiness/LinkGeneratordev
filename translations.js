@@ -8,16 +8,26 @@ class TranslationManager {
         this.supportedLanguages = {
             'en': { name: 'English', flag: '🇺🇸' },
             'es': { name: 'Español', flag: '🇪🇸' },
+            'zh': { name: '中文', flag: '🇨🇳' },
+            'hi': { name: 'हिन्दी', flag: '🇮🇳' },
             'fr': { name: 'Français', flag: '🇫🇷' },
             'de': { name: 'Deutsch', flag: '🇩🇪' },
-            'it': { name: 'Italiano', flag: '🇮🇹' },
+            'ja': { name: '日本語', flag: '🇯🇵' },
+            'ko': { name: '한국어', flag: '🇰🇷' },
             'pt': { name: 'Português', flag: '🇵🇹' },
             'ru': { name: 'Русский', flag: '🇷🇺' },
-            'zh': { name: '中文', flag: '🇨🇳' },
-            'ja': { name: '日本語', flag: '🇯🇵' },
-            'ko': { name: '한국어', flag: '🇰🇷' }
+            'it': { name: 'Italiano', flag: '🇮🇹' },
+            'nl': { name: 'Nederlands', flag: '🇳🇱' },
+            'sv': { name: 'Svenska', flag: '🇸🇪' },
+            'tr': { name: 'Türkçe', flag: '🇹🇷' },
+            'pl': { name: 'Polski', flag: '🇵🇱' },
+            'ar': { name: 'العربية', flag: '🇦🇪' },
+            'th': { name: 'ไทย', flag: '🇹🇭' },
+            'vi': { name: 'Tiếng Việt', flag: '🇻🇳' },
+            'id': { name: 'Bahasa Indonesia', flag: '🇮🇩' },
+            'uk': { name: 'Українська', flag: '🇺🇦' }
         };
-        this.init();
+        // No llamar init() aquí, se llamará desde DOMContentLoaded
     }
 
     async init() {
@@ -104,14 +114,23 @@ class TranslationManager {
         
         if (currentFlag && currentLang) {
             const lang = this.supportedLanguages[this.currentLanguage];
-            // Actualizar la bandera (mantenemos las banderas SVG del HTML)
-            if (this.currentLanguage === 'es') {
-                currentFlag.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23AA151B'/%3E%3Crect width='60' height='10' y='10' fill='%23F1BF00'/%3E%3C/svg%3E";
-                currentFlag.alt = "Español";
-            } else {
-                currentFlag.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23012169'/%3E%3Cpath d='M0 0l60 30M60 0L0 30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0l60 30M60 0L0 30' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E";
-                currentFlag.alt = "English";
-            }
+            
+            // Mapeo de banderas SVG para cada idioma
+            const flagSvgs = {
+                'en': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23012169'/%3E%3Cpath d='M0 0l60 30M60 0L0 30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0l60 30M60 0L0 30' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E",
+                'es': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23AA151B'/%3E%3Crect width='60' height='10' y='10' fill='%23F1BF00'/%3E%3C/svg%3E",
+                'zh': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23DE2910'/%3E%3Cpolygon fill='%23FFDE00' points='12,6 14.5,12.5 21,12.5 16,16.5 18.5,23 12,19 5.5,23 8,16.5 3,12.5 9.5,12.5'/%3E%3C/svg%3E",
+                'fr': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='20' height='30' fill='%23002395'/%3E%3Crect x='20' width='20' height='30' fill='%23FFFFFF'/%3E%3Crect x='40' width='20' height='30' fill='%23ED2939'/%3E%3C/svg%3E",
+                'de': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='10' fill='%23000000'/%3E%3Crect y='10' width='60' height='10' fill='%23DD0000'/%3E%3Crect y='20' width='60' height='10' fill='%23FFCE00'/%3E%3C/svg%3E",
+                'ja': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23FFFFFF'/%3E%3Ccircle cx='30' cy='15' r='9' fill='%23BC002D'/%3E%3C/svg%3E",
+                'ko': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23FFFFFF'/%3E%3Ccircle cx='30' cy='15' r='8' fill='%23CD2E3A'/%3E%3C/svg%3E",
+                'pt': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='24' height='30' fill='%23046A38'/%3E%3Crect x='24' width='36' height='30' fill='%23DA020E'/%3E%3C/svg%3E"
+            };
+            
+            // Usar la bandera específica o la de inglés por defecto
+            const flagSrc = flagSvgs[this.currentLanguage] || flagSvgs['en'];
+            currentFlag.src = flagSrc;
+            currentFlag.alt = lang ? lang.name : 'Language';
             currentLang.textContent = this.currentLanguage.toUpperCase();
         }
     }
@@ -184,11 +203,6 @@ class TranslationManager {
 
 // Instancia global del gestor de traducciones
 let translationManager;
-
-// Inicializar cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', () => {
-    translationManager = new TranslationManager();
-});
 
 // Exportar para uso en otros scripts
 if (typeof module !== 'undefined' && module.exports) {

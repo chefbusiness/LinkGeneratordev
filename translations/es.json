@@ -4,6 +4,7 @@
     "description": "Genera enlaces mailto profesionales con asunto, cuerpo, CC, BCC y más prellenados. Perfecto para desarrolladores, marketers y empresas. Herramienta gratuita online.",
     "keywords": "generador enlaces mailto, creador enlaces email, URL mailto, marketing por email, desarrollo web, formularios de contacto"
   },
+  "page-title": "Generador de Enlaces Mailto - Crea Enlaces de Email Profesionales al Instante",
   "header": {
     "title": "Generador de Enlaces Mailto",
     "subtitle": "Crea enlaces de email profesionales al instante"
@@ -14,19 +15,20 @@
     "spanish": "Español"
   },
   "form": {
-    "email_label": "Dirección de Email",
+    "email_label": "Para",
     "email_placeholder": "destinatario@ejemplo.com",
     "subject_label": "Asunto",
-    "subject_placeholder": "Ingresa el asunto del email",
-    "body_label": "Cuerpo del Mensaje",
-    "body_placeholder": "Escribe tu mensaje aquí...",
-    "cc_label": "CC (Copia de Carbón)",
-    "cc_placeholder": "cc@ejemplo.com",
-    "bcc_label": "BCC (Copia Oculta)",
-    "bcc_placeholder": "bcc@ejemplo.com",
-    "generate_button": "Generar Enlace Mailto",
-    "copy_button": "Copiar Enlace",
-    "test_button": "Probar Enlace",
+    "subject_placeholder": "Asunto del email",
+    "body_label": "Cuerpo",
+    "body_placeholder": "Contenido del email...",
+    "cc_label": "Cc",
+    "cc_placeholder": "copia@ejemplo.com",
+    "bcc_label": "Bcc",
+    "bcc_placeholder": "copia_oculta@ejemplo.com",
+    "link_text": "Texto del enlace",
+    "generate_button": "Generar mi enlace mailto",
+    "copy_button": "Copiar",
+    "test_button": "Probar el enlace",
     "reset_button": "Reiniciar Formulario",
     "validation": {
       "to_required": "Por favor ingresa al menos una dirección de email en el campo \"Para\"",
@@ -35,7 +37,7 @@
   },
   "results": {
     "title": "Enlace mailto",
-    "html_title": "Código HTML",
+    "html_code_title": "Código HTML",
     "test_title": "Probar el enlace",
     "copy_button": "Copiar",
     "copy_success": "¡Copiado!",
@@ -44,322 +46,201 @@
   "donation": {
     "title": "Apoya Este Proyecto",
     "description": "Si esta herramienta te ha sido útil, considera apoyar su desarrollo con una pequeña donación.",
-    "button_text": "Cómprame un café ☕"
+    "button_text": "Cómprame un café ☕",
+    "button": "Cómprame un café",
+    "support_request": "Si esta herramienta te ha sido útil, considera apoyar su desarrollo con una pequeña donación de café. Cada contribución me ayuda a dedicar más tiempo a mejorar y mantener herramientas como esta.",
+    "appreciation": "¡Tu apoyo significa mucho para mí! ☕✨",
+    "thank_you": "¡Gracias por usar mi herramienta, y espero que aporte eficiencia a tus proyectos!",
+    "signature": "—John",
+    "contact": "¿Preguntas o comentarios? Contáctame en <a href=\"mailto:john@chefbusiness.co\" style=\"color: #007bff; text-decoration: none;\">john@chefbusiness.co</a>"
   },
   "guide": {
     "title": "Guía Completa de Enlaces Mailto",
     "what_are_mailto": {
       "title": "¿Qué son los Enlaces Mailto?",
-      "description": "Los enlaces mailto son URLs especiales que abren el cliente de email predeterminado del usuario con información prellenada. Son esenciales para desarrolladores web y marketers que quieren optimizar el proceso de comunicación por email."
+      "description": "Un enlace mailto es un hipervínculo HTML poderoso que abre instantáneamente el cliente de email predeterminado del usuario con información prellenada. Esto elimina la necesidad de que los usuarios copien manualmente las direcciones de email, haciendo la comunicación fluida y profesional."
     },
-    "examples": {
-      "title": "Ejemplos Prácticos",
-      "description": "Aquí tienes algunos casos de uso comunes para enlaces mailto:",
-      "contact_us": "Contáctanos para soporte",
-      "feedback": "Envía comentarios sobre nuestro servicio",
-      "newsletter": "Suscríbete a nuestro boletín",
-      "report_bug": "Reporta un error o problema"
+    "intro": {
+      "donation_thanks": "Para las personas generosas que ya hicieron una donación<br>¡Gracias! ❤️",
+      "main_message": "Más importante aún, déjame contarte sobre los enlaces mailto para que sepas cómo<br><strong>generarlos tú mismo</strong>.",
+      "subtitle": "Domina el arte de los enlaces mailto con nuestra guía completa. Aprende a crear enlaces de correo profesionales que funcionen perfectamente en todas las plataformas y clientes de correo.",
+      "description": "Exploraremos tanto la estructura técnica como la implementación práctica para ayudarte a crear enlaces de correo efectivos."
     },
-    "implementation": {
-      "title": "Consejos de Implementación",
-      "description": "Mejores prácticas para implementar enlaces mailto en tus proyectos:",
-      "fallback": "Siempre proporciona opciones alternativas",
-      "testing": "Prueba en diferentes plataformas",
-      "validation": "Valida direcciones de email antes de generar enlaces",
-      "user_feedback": "Proporciona retroalimentación clara al usuario"
+    "toc": {
+      "simple_email": "Creando enlaces de correo simples",
+      "empty_recipient": "Manejo de destinatarios vacíos",
+      "parameter_structure": "Estructura de parámetros y sintaxis",
+      "subject_lines": "Agregando líneas de asunto",
+      "complete_emails": "Plantillas de correo completas",
+      "professional_examples": "Casos de uso profesionales",
+      "html_implementation": "Implementación HTML",
+      "final_thoughts": "Pensamientos finales"
     },
     "basic_syntax": {
-      "title": "Sintaxis Básica de Mailto",
+      "title": "Sintaxis básica de mailto",
+      "intro": "Cada enlace mailto comienza con el identificador de protocolo:",
       "simple_example": "Creando enlaces de email simples",
       "description": "La forma más básica incluye solo la dirección de email del destinatario inmediatamente después de los dos puntos:",
+      "clickable_description": "Esto crea un enlace clicable que abre el cliente de correo electrónico del usuario con el campo de destinatario prellenado.",
       "with_subject": "Agregando líneas de asunto",
       "subject_description": "Las líneas de asunto hacen que tus enlaces mailto sean más profesionales y ayudan a los destinatarios a entender el propósito del email inmediatamente.",
       "subject_example": "Ejemplo básico de asunto",
-      "subject_example_description": "Aquí tienes una consulta comercial con una línea de asunto clara:",
-      "with_body": "Con cuerpo del mensaje:"
+      "subject_example_description": "Aquí tienes una consulta comercial con una línea de asunto clara:"
     },
     "advanced_features": {
-      "title": "Características Avanzadas de Mailto",
+      "title": "Gestión avanzada de destinatarios",
+      "description": "Aunque los destinatarios únicos son más confiables, puedes incluir múltiples destinatarios usando técnicas específicas. Sin embargo, la compatibilidad varía entre clientes de correo, por lo que es esencial realizar pruebas exhaustivas.",
       "multiple_recipients": {
-        "title": "Múltiples Destinatarios",
-        "description": "Envía emails a múltiples personas separando las direcciones con comas:"
+        "title": "Múltiples destinatarios en el campo TO",
+        "description": "Para múltiples destinatarios principales, separa las direcciones de correo electrónico con comas (sin espacios):"
       },
-      "cc_bcc": {
-        "title": "CC y BCC",
-        "description": "Incluye destinatarios de copia de carbón y copia oculta:"
+      "alternative_separator": {
+        "title": "Método de separador alternativo",
+        "description": "Si las comas no funcionan con ciertos clientes de correo electrónico, prueba con punto y coma:"
       },
-      "complex_example": {
-        "title": "Ejemplo Complejo",
-        "description": "Combinando múltiples parámetros:"
-      }
+      "distributed_recipients": {
+        "title": "Enfoque recomendado: Destinatarios distribuidos",
+        "description": "El método más confiable distribuye los destinatarios entre los campos TO, CC y BCC:"
+      },
+      "pro_tip": "<strong>Consejo profesional:</strong> Siempre prueba tus enlaces mailto en diferentes clientes de correo (Gmail, Outlook, Apple Mail) antes del despliegue."
     },
-    "best_practices": {
-      "title": "Mejores Prácticas",
-      "encoding": {
-        "title": "Codificación de URL",
-        "description": "Siempre codifica caracteres especiales en tus enlaces mailto:"
+    "empty_recipients": {
+      "title": "Manejo de destinatarios vacíos",
+      "description": "Crear enlaces mailto sin destinatarios predefinidos permite a los usuarios elegir sus propios destinatarios. Aunque menos común, este enfoque tiene casos de uso específicos como botones de 'compartir por correo'.",
+      "standard_format": {
+        "title": "Formato estándar de destinatario vacío",
+        "description": "El enfoque más compatible usa un signo de interrogación directamente después de mailto:"
       },
-      "user_experience": {
-        "title": "Experiencia de Usuario",
-        "tips": [
-          "Mantén las líneas de asunto concisas y descriptivas",
-          "Prellena información útil en el cuerpo",
-          "Prueba los enlaces en diferentes clientes de email",
-          "Proporciona métodos de contacto alternativos"
-        ]
+      "alternative_formats": {
+        "title": "Formatos alternativos",
+        "description": "Algunos clientes de correo aceptan estas variaciones:"
       },
-      "accessibility": {
-        "title": "Accesibilidad",
-        "tips": [
-          "Usa texto descriptivo para los enlaces",
-          "Incluye atributos aria-label para lectores de pantalla",
-          "Asegura suficiente contraste de color",
-          "Prueba con navegación por teclado"
-        ]
-      }
+      "important_note": "<strong>Importante:</strong> Los enlaces de destinatario vacío tienen compatibilidad limitada. Prueba exhaustivamente antes de la implementación."
     },
-    "troubleshooting": {
-      "title": "Solución de Problemas Comunes",
-      "no_email_client": {
-        "title": "Sin Cliente de Email Predeterminado",
-        "description": "Algunos usuarios pueden no tener un cliente de email predeterminado configurado. Considera proporcionar métodos de contacto alternativos o instrucciones para configurar clientes de email."
-      },
-      "mobile_compatibility": {
-        "title": "Compatibilidad Móvil",
-        "description": "Los enlaces mailto funcionan de manera diferente en dispositivos móviles. Prueba tus enlaces en varios dispositivos y aplicaciones de email para asegurar compatibilidad."
-      },
-      "character_limits": {
-        "title": "Límites de Caracteres",
-        "description": "Algunos clientes de email tienen límites en la longitud de URL. Mantén tus enlaces mailto concisos y prueba con contenido largo."
-      }
+    "parameter_structure": {
+      "title": "Estructura de parámetros y sintaxis",
+      "description": "Los enlaces mailto usan sintaxis de parámetros URL con delimitadores específicos:",
+      "question_mark": "<strong>Signo de interrogación (?):</strong> Separa la dirección de correo del primer parámetro",
+      "ampersand": "<strong>Ampersand (&):</strong> Separa parámetros adicionales",
+      "examples_title": "Ejemplos de estructura de parámetros"
     },
     "encoding_guide": {
       "title": "Fundamentos de codificación URL",
-      "description": "Los caracteres especiales en las URLs deben codificarse correctamente para garantizar la compatibilidad entre diferentes clientes de correo electrónico.",
-      "space_example": "Los espacios se convierten en %20",
-      "special_chars": "Caracteres especiales como &, ?, # requieren codificación",
-      "best_practice": "Siempre codifica los parámetros para evitar problemas de compatibilidad",
+      "description": "Los caracteres especiales en los enlaces mailto deben codificarse como URL para garantizar la funcionalidad adecuada en todos los clientes de correo electrónico y navegadores.",
       "common_characters": "Codificaciones de caracteres comunes",
       "common_characters_description": "Aquí están las codificaciones URL más utilizadas para enlaces mailto:",
-      "space": "Espacio",
-      "newline": "Nueva línea",
-      "ampersand": "Ampersand",
-      "question_mark": "Signo de interrogación",
-      "hash": "Almohadilla/Numeral",
-      "clickable_description": "Esto crea un enlace clicable que abre el cliente de correo electrónico del usuario con el campo de destinatario prellenado."
+      "why_encoding_matters": {
+        "title": "Por qué importa la codificación",
+        "description": "La codificación adecuada asegura que tus enlaces mailto funcionen consistentemente en:",
+        "browsers": "Diferentes navegadores web (Chrome, Firefox, Safari, Edge)",
+        "email_clients": "Varios clientes de correo (Gmail, Outlook, Apple Mail, Thunderbird)",
+        "platforms": "Plataformas móviles y de escritorio"
+      },
+      "pro_tip": "<strong>💡 Consejo profesional:</strong> ¡Usa nuestro generador de enlaces mailto arriba para manejar automáticamente toda la codificación por ti!"
     },
-    "advanced_features": {
-            "title": "Gestión avanzada de destinatarios",
-            "description": "Aunque los destinatarios únicos son más confiables, puedes incluir múltiples destinatarios usando técnicas específicas. Sin embargo, la compatibilidad varía entre clientes de correo, por lo que es esencial realizar pruebas exhaustivas.",
-            "multiple_recipients": {
-                "title": "Múltiples destinatarios en el campo TO",
-                "description": "Para múltiples destinatarios principales, separa las direcciones de correo electrónico con comas (sin espacios):"
-            },
-            "alternative_separator": {
-                "title": "Método de separador alternativo",
-                "description": "Si las comas no funcionan con ciertos clientes de correo electrónico, prueba con punto y coma:"
-            },
-            "distributed_recipients": {
-                "title": "Enfoque recomendado: Destinatarios distribuidos",
-                "description": "El método más confiable distribuye los destinatarios entre los campos TO, CC y BCC:"
-            },
-            "pro_tip": "Consejo profesional: Siempre prueba tus enlaces mailto en diferentes clientes de correo (Gmail, Outlook, Apple Mail) antes del despliegue."
-        },
-        "empty_recipients": {
-            "title": "Manejo de destinatarios vacíos",
-            "description": "Crear enlaces mailto sin destinatarios predefinidos permite a los usuarios elegir sus propios destinatarios. Aunque menos común, este enfoque tiene casos de uso específicos como botones de 'compartir por correo'.",
-            "standard_format": {
-                "title": "Formato estándar de destinatario vacío",
-                "description": "El enfoque más compatible usa un signo de interrogación directamente después de mailto:"
-            },
-            "alternative_formats": {
-                "title": "Formatos alternativos",
-                "description": "Algunos clientes de correo aceptan estas variaciones:"
-            },
-            "important_note": "Importante: Los enlaces de destinatario vacío tienen compatibilidad limitada. Prueba exhaustivamente antes de la implementación."
-        },
-        "parameter_structure": {
-            "title": "Estructura de parámetros y sintaxis",
-            "description": "Los enlaces mailto usan sintaxis de parámetros URL con delimitadores específicos:",
-            "question_mark": "Signo de interrogación (?): Separa la dirección de correo del primer parámetro",
-            "ampersand": "Ampersand (&): Separa parámetros adicionales",
-            "examples_title": "Ejemplos de estructura de parámetros"
-         },
-         "encoding": {
-             "title": "Por qué importa la codificación",
-             "description": "La codificación URL adecuada asegura que los caracteres especiales se muestren correctamente en todos los clientes de correo. Sin codificación, los caracteres especiales pueden causar enlaces rotos o contenido mal formateado.",
-             "special_characters": {
-                 "title": "Caracteres especiales comunes",
-                 "description": "Estos caracteres requieren codificación URL:"
-             },
-             "encoding_examples": {
-                 "title": "Ejemplos de codificación",
-                 "before": "Antes de la codificación:",
-                 "after": "Después de la codificación:"
-             }
-           },
-           "donation": {
-               "title": "Donación",
-               "description": "Si esta guía te ha sido útil, considera apoyar el desarrollo de más recursos como este.",
-               "button_text": "Cómprame un café"
-           },
-           "intro": {
-               "donation_thanks": "Para las personas generosas que ya hicieron una donación<br><strong>¡Muchas gracias! ❤️</strong>",
-               "main_message": "Más importante aún, déjame contarte sobre los enlaces mailto para que sepas cómo<br><strong>generarlos tú mismo</strong>.",
-               "subtitle": "Domina el arte de los enlaces mailto con nuestra guía completa. Aprende a crear enlaces de correo profesionales que funcionen perfectamente en todas las plataformas y clientes de correo.",
-               "description": "Exploraremos tanto la estructura técnica como la implementación práctica para ayudarte a crear enlaces de correo efectivos."
-           },
-           "toc": {
-               "simple_email": "Creando enlaces de correo simples",
-               "empty_recipient": "Manejo de destinatarios vacíos",
-               "parameter_structure": "Estructura de parámetros y sintaxis",
-               "subject_lines": "Agregando líneas de asunto",
-               "complete_emails": "Plantillas de correo completas",
-               "professional_examples": "Casos de uso profesionales",
-               "html_implementation": "Implementación HTML",
-               "final_thoughts": "Pensamientos finales"
-           },
-           "basic_syntax": {
-               "title": "Sintaxis básica de mailto",
-               "intro": "Cada enlace mailto comienza con el identificador de protocolo:"
-           },
-           "encoding": {
-               "characters": {
-                   "space": "<strong>%20</strong> = espacio",
-                   "exclamation": "<strong>%21</strong> = ! (signo de exclamación)",
-                   "quote": "<strong>%22</strong> = \" (comillas)",
-                   "ampersand": "<strong>%26</strong> = & (ampersand)",
-                   "comma": "<strong>%2C</strong> = , (coma)",
-                   "colon": "<strong>%3A</strong> = : (dos puntos)",
-                   "question": "<strong>%3F</strong> = ? (signo de interrogación)",
-                   "linebreak": "<strong>%0A</strong> = salto de línea"
-               }
-           },
-           "html_implementation": {
-               "demo_link": "Solicitar una Demo"
-           },
-         "email_templates": {
-             "title": "Plantillas de correo completas",
-             "description": "Estas plantillas demuestran implementaciones del mundo real con codificación adecuada y estructura de parámetros:",
-             "customer_support": {
-                 "title": "Plantilla de soporte al cliente",
-                 "description": "Ideal para páginas de contacto y formularios de soporte:"
-             },
-             "project_collaboration": {
-                 "title": "Correo de colaboración de proyecto",
-                 "description": "Perfecto para equipos y gestión de proyectos:"
-             }
-         },
-         "professional_use_cases": {
-             "title": "Casos de uso profesionales",
-             "description": "Los enlaces mailto brillan en estos escenarios profesionales:",
-             "contact_forms": "Formularios de contacto: Proporciona una alternativa de correo directo",
-             "support_systems": "Sistemas de soporte: Permite a los usuarios enviar consultas preformateadas",
-             "team_collaboration": "Colaboración en equipo: Facilita la comunicación estructurada del proyecto",
-             "client_communication": "Comunicación con clientes: Agiliza las interacciones profesionales"
-          },
-          "html_implementation": {
-              "title": "Implementación HTML",
-              "description": "La implementación adecuada de HTML asegura accesibilidad y funcionalidad en todos los dispositivos:",
-              "basic_structure": {
-                  "title": "Estructura HTML básica",
-                  "description": "Siempre usa etiquetas de anclaje semánticamente correctas:"
-              },
-              "link_text": {
-                  "title": "Agregando texto de enlace",
-                  "description": "Proporciona texto de enlace descriptivo para mejor accesibilidad:"
-              },
-              "link_text": "Texto del enlace"
-          },
-          "best_practices": {
-              "title": "Mejores prácticas y consejos",
-              "description": "Sigue estas pautas para implementaciones óptimas de mailto:",
-              "cross_platform": {
-                  "title": "Compatibilidad multiplataforma",
-                  "description": "Prueba en múltiples dispositivos y clientes de correo",
-                  "test_clients": "Prueba en Gmail, Outlook, Apple Mail y clientes móviles",
-                  "verify_encoding": "Verifica que la codificación URL funcione correctamente",
-                  "check_formatting": "Revisa el formato en diferentes tamaños de pantalla"
-              },
-              "user_experience": {
-                  "title": "Pautas de experiencia de usuario",
-                  "description": "Optimiza para la experiencia del usuario",
-                  "clear_purpose": "Haz que el propósito del enlace sea claro",
-                  "fallback_options": "Proporciona opciones de respaldo para usuarios sin clientes de correo configurados",
-                  "mobile_friendly": "Asegúrate de que los enlaces sean amigables para móviles"
-              }
-          },
-          "final_thoughts": {
-              "title": "Pensamientos finales",
-              "description": "Los enlaces mailto siguen siendo una herramienta valiosa para la comunicación web cuando se implementan correctamente. Aunque las tecnologías más nuevas ofrecen alternativas, mailto proporciona una solución universal que funciona en todos los dispositivos y plataformas.",
-              "key_takeaways": "Recuerda siempre codificar caracteres especiales, probar en múltiples clientes y proporcionar opciones de respaldo para la mejor experiencia de usuario.",
-              "additional_resources": {
-                  "title": "Recursos adicionales",
-                  "description": "Para implementaciones más avanzadas, considera:",
-                  "form_handlers": "Manejadores de formularios del lado del servidor para mayor confiabilidad",
-                  "email_apis": "APIs de correo electrónico para funcionalidad avanzada",
-                  "analytics": "Seguimiento de análisis para el uso de enlaces mailto"
-              }
-          },
-    "email_clients": {
-      "title": "Compatibilidad de Clientes de Email",
-      "description": "Diferentes clientes de email manejan los enlaces mailto de manera diferente:",
-      "desktop_clients": {
-        "title": "Clientes de Escritorio",
-        "outlook": "Microsoft Outlook - Soporte completo para todos los parámetros",
-        "thunderbird": "Mozilla Thunderbird - Excelente compatibilidad",
-        "apple_mail": "Apple Mail - Buen soporte con limitaciones menores"
-      },
-      "webmail_services": {
-        "title": "Servicios de Webmail",
-        "gmail": "Gmail - Soporte limitado, abre en navegador",
-        "outlook_web": "Outlook.com - Buena compatibilidad",
-        "yahoo": "Yahoo Mail - Soporte básico"
-      },
-      "mobile_apps": {
-        "title": "Aplicaciones de Email Móviles",
-        "ios_mail": "iOS Mail - Excelente soporte",
-        "android_gmail": "Android Gmail - Buena compatibilidad",
-        "third_party": "Aplicaciones de terceros - Varía según la aplicación"
+    "encoding": {
+      "characters": {
+        "space": "<strong>%20</strong> = espacio",
+        "exclamation": "<strong>%21</strong> = ! (signo de exclamación)",
+        "quote": "<strong>%22</strong> = \" (comillas)",
+        "ampersand": "<strong>%26</strong> = & (ampersand)",
+        "comma": "<strong>%2C</strong> = , (coma)",
+        "colon": "<strong>%3A</strong> = : (dos puntos)",
+        "question": "<strong>%3F</strong> = ? (signo de interrogación)",
+        "linebreak": "<strong>%0A</strong> = salto de línea"
       }
     },
-    "security_considerations": {
-      "title": "Consideraciones de Seguridad",
-      "description": "Al implementar enlaces mailto, considera estos aspectos de seguridad:",
-      "email_harvesting": {
-        "title": "Protección contra Recolección de Emails",
-        "description": "Protege las direcciones de email de bots de spam:",
-        "techniques": [
-          "Usa JavaScript para generar enlaces mailto dinámicamente",
-          "Implementa CAPTCHA para formularios de contacto",
-          "Considera usar formularios de contacto en lugar de enlaces mailto directos",
-          "Ofusca direcciones de email en el código fuente HTML"
-        ]
-      },
-      "data_validation": {
-        "title": "Validación de Datos",
-        "description": "Siempre valida y sanitiza la entrada del usuario:",
-        "tips": [
-          "Valida el formato de la dirección de email",
-          "Limita la longitud del mensaje",
-          "Filtra contenido malicioso",
-          "Usa codificación adecuada para todos los parámetros"
-        ]
+    "complete_templates": {
+      "title": "Plantillas de correo completas",
+      "description": "Combinar líneas de asunto y contenido del cuerpo crea plantillas de correo completas que ahorran tiempo tanto a ti como a tus destinatarios.",
+      "customer_support": {
+        "title": "Plantilla de soporte al cliente",
+        "description": "Perfecta para páginas de mesa de ayuda o soporte:"
       }
+    },
+    "professional_examples": {
+      "title": "Casos de uso profesionales",
+      "description": "Aquí tienes una plantilla de correo comercial completa con todos los parámetros:",
+      "project_collaboration": {
+        "title": "Correo de colaboración de proyecto",
+        "to": "<strong>Para:</strong> project.manager@company.com",
+        "cc": "<strong>Cc:</strong> team.lead@company.com",
+        "bcc": "<strong>Bcc:</strong> archive@company.com",
+        "subject": "<strong>Asunto:</strong> Envío de Propuesta de Proyecto",
+        "body": "<strong>Cuerpo:</strong> Estimado Gerente de Proyecto, Estoy enviando nuestra propuesta de proyecto Q4 para revisión. Por favor encuentra los detalles clave abajo y déjame saber si necesitas información adicional. Saludos cordiales, [Tu Nombre]"
+      },
+      "additional_templates": {
+        "title": "Plantillas profesionales adicionales",
+        "meeting_request": "<strong>Solicitud de reunión:</strong>"
+      }
+    },
+    "html_implementation": {
+      "title": "Implementación HTML",
+      "description": "Convertir tu enlace mailto en HTML clicable requiere estructura de etiqueta de anclaje adecuada y atributos.",
+      "basic_structure": {
+        "title": "Estructura HTML básica",
+        "description": "Las etiquetas de anclaje HTML consisten en elementos de apertura y cierre:"
+      },
+      "link_text": {
+        "title": "Agregando texto de enlace",
+        "description": "El texto entre las etiquetas se convierte en el texto del enlace clicable:"
+      },
+      "href_attribute": {
+        "title": "Agregando el atributo href",
+        "description": "El atributo href contiene tu enlace mailto:"
+      },
+      "accessibility": {
+        "title": "HTML mejorado con accesibilidad",
+        "description": "Para mejor accesibilidad y experiencia de usuario, agrega atributos descriptivos:"
+      },
+      "live_example": {
+        "title": "Ejemplo en vivo",
+        "description": "Así es como aparece el enlace a los usuarios:"
+      },
+      "demo_link": "Solicitar una Demo"
+    },
+    "best_practices": {
+      "title": "Mejores prácticas y consejos",
+      "compatibility": {
+        "title": "Compatibilidad multiplataforma",
+        "test_extensively": "<strong>Prueba extensivamente:</strong> Verifica que los enlaces funcionen en los principales clientes de correo",
+        "keep_simple": "<strong>Manténlo simple:</strong> Evita combinaciones de parámetros demasiado complejas",
+        "mobile_first": "<strong>Móvil primero:</strong> Asegúrate de que los enlaces funcionen bien en dispositivos móviles",
+        "fallback_options": "<strong>Opciones de respaldo:</strong> Proporciona métodos de contacto alternativos"
+      },
+      "user_experience": {
+        "title": "Pautas de experiencia de usuario",
+        "clear_text": "<strong>Texto de enlace claro:</strong> Usa texto descriptivo que explique la acción",
+        "reasonable_defaults": "<strong>Valores predeterminados razonables:</strong> Prellena información útil sin ser abrumador",
+        "privacy": "<strong>Consideración de privacidad:</strong> Ten cuidado con qué información prepobles",
+        "professional_tone": "<strong>Tono profesional:</strong> Usa lenguaje apropiado para tu audiencia"
+      },
+      "technical": {
+        "title": "Consideraciones técnicas",
+        "character_limits": "<strong>Límites de caracteres:</strong> Algunos clientes de correo tienen restricciones de longitud de URL",
+        "encoding_accuracy": "<strong>Precisión de codificación:</strong> Siempre codifica adecuadamente los caracteres especiales",
+        "security": "<strong>Conciencia de seguridad:</strong> Evita incluir información sensible en URLs",
+        "analytics": "<strong>Seguimiento de análisis:</strong> Considera cómo rastrear el engagement de enlaces mailto"
+      }
+    },
+    "final_thoughts": {
+      "title": "Pensamientos finales",
+      "description": "Los enlaces mailto son una herramienta poderosa para agilizar la comunicación entre sitios web y usuarios. Cuando se implementan correctamente, proporcionan un puente fluido entre el contenido web y la comunicación por correo electrónico.",
+      "key_success": "Recuerda que la clave del éxito en la implementación de mailto radica en entender las necesidades de tus usuarios, probar en diferentes plataformas y mantener la simplicidad mientras proporcionas valor.",
+      "conclusion": "Ya sea que estés construyendo formularios de contacto, sistemas de soporte o campañas de marketing, los enlaces mailto bien elaborados pueden mejorar significativamente el engagement del usuario y la eficiencia de comunicación."
     },
     "additional_resources": {
-      "title": "Recursos Adicionales",
+      "title": "Recursos adicionales",
       "rfc_6068": "Especificación RFC 6068",
       "w3c_html": "Especificación HTML del W3C",
       "compatibility_testing": "Herramientas de prueba de compatibilidad de clientes de email",
       "encoding_reference": "Guías de referencia de codificación de URL"
-    },
-     "footer": {
-         "copyright": "© 2024 MailtoGen Pro. Todos los derechos reservados.",
-         "privacy": "Política de Privacidad",
-         "terms": "Términos de Servicio",
-         "contact": "Contacto",
-         "made_with": "Hecho con ❤️ para desarrolladores y marketers"
-     }
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 MailtoGen Pro. Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "contact": "Contacto"
   }
 }

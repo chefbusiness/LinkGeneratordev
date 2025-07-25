@@ -1,0 +1,246 @@
+{
+  "meta": {
+    "title": "Mailto链接生成器 - 即时创建专业邮件链接",
+    "description": "生成专业的mailto链接，预填主题、正文、抄送、密送等。完美适用于开发者、营销人员和企业。免费在线工具。",
+    "keywords": "mailto链接生成器, 邮件链接创建器, mailto URL, 邮件营销, 网页开发, 联系表单"
+  },
+  "page-title": "Mailto链接生成器 - 即时创建专业邮件链接",
+  "header": {
+    "title": "Mailto链接生成器",
+    "subtitle": "即时创建专业邮件链接"
+  },
+  "language": {
+    "selector": "语言",
+    "english": "英语",
+    "spanish": "西班牙语"
+  },
+  "form": {
+    "email_label": "收件人",
+    "email_placeholder": "recipient@example.com",
+    "subject_label": "主题",
+    "subject_placeholder": "邮件主题",
+    "body_label": "正文",
+    "body_placeholder": "邮件内容...",
+    "cc_label": "抄送",
+    "cc_placeholder": "cc@example.com",
+    "bcc_label": "密送",
+    "bcc_placeholder": "bcc@example.com",
+    "link_text": "链接文本",
+    "generate_button": "生成我的mailto链接",
+    "copy_button": "复制",
+    "test_button": "测试链接",
+    "reset_button": "重置表单",
+    "validation": {
+      "to_required": "请在收件人字段中至少输入一个邮箱地址",
+      "invalid_email": "请输入有效的邮箱地址"
+    }
+  },
+  "results": {
+    "title": "Mailto链接",
+    "html_code_title": "HTML代码",
+    "test_title": "测试链接",
+    "copy_button": "复制",
+    "copy_success": "已复制！",
+    "copy_error": "复制到剪贴板时出错"
+  },
+  "donation": {
+    "title": "支持这个项目",
+    "description": "如果这个工具对您有帮助，请考虑通过小额捐赠来支持其开发。",
+    "button_text": "请我喝咖啡 ☕",
+    "button": "请我喝咖啡",
+    "support_request": "如果这个工具对您有帮助，请考虑通过小额咖啡捐赠来支持其开发。每一份贡献都帮助我投入更多时间来改进和维护这样的工具。",
+    "appreciation": "您的支持对我意义重大！☕✨",
+    "thank_you": "感谢您使用我的工具，希望它能为您的项目带来效率！",
+    "signature": "—John",
+    "contact": "有问题或反馈？请联系我"
+  },
+  "guide": {
+    "title": "Mailto链接完整指南",
+    "what_are_mailto": {
+      "title": "什么是Mailto链接？",
+      "description": "Mailto链接是一种强大的HTML超链接，可以立即打开用户的默认邮件客户端并预填信息。这消除了用户手动复制邮箱地址的需要，使沟通变得流畅和专业。"
+    },
+    "intro": {
+      "donation_thanks": "致已经捐赠的慷慨人士，谢谢！❤️",
+      "main_message": "更重要的是，让我告诉您关于mailto链接的知识，这样您就知道如何自己生成它们。",
+      "subtitle": "通过我们的完整指南掌握mailto链接的艺术。学习创建在所有平台和邮件客户端上完美运行的专业邮件链接。",
+      "description": "我们将探索技术结构和实际实现，帮助您创建有效的邮件链接。"
+    },
+    "toc": {
+      "simple_email": "创建简单邮件链接",
+      "empty_recipient": "处理空收件人",
+      "parameter_structure": "参数结构和语法",
+      "subject_lines": "添加主题行",
+      "complete_emails": "完整邮件模板",
+      "professional_examples": "专业用例",
+      "html_implementation": "HTML实现",
+      "final_thoughts": "最后的想法"
+    },
+    "basic_syntax": {
+      "title": "基本mailto语法",
+      "intro": "每个mailto链接都以协议标识符开始：",
+      "simple_example": "创建简单邮件链接",
+      "description": "最基本的形式只包括冒号后面的收件人邮箱地址：",
+      "clickable_description": "这创建了一个可点击的链接，打开用户的邮件客户端并预填收件人字段。",
+      "with_subject": "添加主题行",
+      "subject_description": "主题行使您的mailto链接更专业，并帮助收件人立即理解邮件的目的。",
+      "subject_example": "基本主题示例",
+      "subject_example_description": "这是一个带有清晰主题行的商业咨询："
+    },
+    "advanced_features": {
+      "title": "高级收件人管理",
+      "description": "虽然单个收件人最可靠，但您可以使用特定技术包含多个收件人。但是，兼容性在不同邮件客户端之间有所不同，因此彻底测试是必要的。",
+      "multiple_recipients": {
+        "title": "TO字段中的多个收件人",
+        "description": "对于多个主要收件人，用逗号分隔邮箱地址（无空格）："
+      },
+      "alternative_separator": {
+        "title": "替代分隔符方法",
+        "description": "如果逗号在某些邮件客户端中不起作用，请尝试分号："
+      },
+      "distributed_recipients": {
+        "title": "推荐方法：分布式收件人",
+        "description": "最可靠的方法是将收件人分布在TO、CC和BCC字段中："
+      },
+      "pro_tip": "专业提示：在部署之前，始终在不同的邮件客户端（Gmail、Outlook、Apple Mail）中测试您的mailto链接。"
+    },
+    "empty_recipients": {
+      "title": "处理空收件人",
+      "description": "创建没有预定义收件人的mailto链接允许用户选择自己的收件人。虽然不太常见，但这种方法有特定的用例，如通过邮件分享按钮。",
+      "standard_format": {
+        "title": "标准空收件人格式",
+        "description": "最兼容的方法是在mailto后直接使用问号："
+      },
+      "alternative_formats": {
+        "title": "替代格式",
+        "description": "一些邮件客户端接受这些变体："
+      },
+      "important_note": "重要：空收件人链接的兼容性有限。在实施前请彻底测试。"
+    },
+    "parameter_structure": {
+      "title": "参数结构和语法",
+      "description": "Mailto链接使用带有特定分隔符的URL参数语法：",
+      "question_mark": "问号(?)：将邮箱地址与第一个参数分开",
+      "ampersand": "和号(&)：分隔附加参数",
+      "examples_title": "参数结构示例"
+    },
+    "encoding_guide": {
+      "title": "URL编码基础",
+      "description": "mailto链接中的特殊字符必须进行URL编码，以确保在所有邮件客户端和浏览器中正常运行。",
+      "common_characters": "常见字符编码",
+      "common_characters_description": "以下是mailto链接最常用的URL编码：",
+      "why_encoding_matters": {
+        "title": "为什么编码很重要",
+        "description": "正确的编码确保您的mailto链接在以下环境中一致工作：",
+        "browsers": "不同的网页浏览器（Chrome、Firefox、Safari、Edge）",
+        "email_clients": "各种邮件客户端（Gmail、Outlook、Apple Mail、Thunderbird）",
+        "platforms": "移动和桌面平台"
+      },
+      "pro_tip": "💡 专业提示：使用上面的mailto链接生成器自动处理所有编码！"
+    },
+    "encoding": {
+      "characters": {
+        "space": "%20 = 空格",
+        "exclamation": "%21 = ! (感叹号)",
+        "quote": "%22 = 引号",
+        "ampersand": "%26 = & (和号)",
+        "comma": "%2C = , (逗号)",
+        "colon": "%3A = : (冒号)",
+        "question": "%3F = ? (问号)",
+        "linebreak": "%0A = 换行"
+      }
+    },
+    "complete_templates": {
+      "title": "完整邮件模板",
+      "description": "结合主题行和正文内容创建完整的邮件模板，为您和收件人节省时间。",
+      "customer_support": {
+        "title": "客户支持模板",
+        "description": "完美适用于帮助台或支持页面："
+      }
+    },
+    "professional_examples": {
+      "title": "专业用例",
+      "description": "这是一个包含所有参数的完整商业邮件模板：",
+      "project_collaboration": {
+        "title": "项目协作邮件",
+        "to": "收件人：project.manager@company.com",
+        "cc": "抄送：team.lead@company.com",
+        "bcc": "密送：archive@company.com",
+        "subject": "主题：项目提案提交",
+        "body": "正文：亲爱的项目经理，我正在提交我们的Q4项目提案供审查。请在下面找到关键详细信息，如果您需要其他信息，请告诉我。此致敬礼，[您的姓名]"
+      },
+      "additional_templates": {
+        "title": "其他专业模板",
+        "meeting_request": "会议请求："
+      }
+    },
+    "html_implementation": {
+      "title": "HTML实现",
+      "description": "将您的mailto链接转换为可点击的HTML需要适当的锚标签结构和属性。",
+      "basic_structure": {
+        "title": "基本HTML结构",
+        "description": "HTML锚标签由开始和结束元素组成："
+      },
+      "link_text": {
+        "title": "添加链接文本",
+        "description": "标签之间的文本成为可点击的链接文本："
+      },
+      "href_attribute": {
+        "title": "添加href属性",
+        "description": "href属性包含您的mailto链接："
+      },
+      "accessibility": {
+        "title": "增强的HTML与可访问性",
+        "description": "为了更好的可访问性和用户体验，添加描述性属性："
+      },
+      "live_example": {
+        "title": "实时示例",
+        "description": "链接对用户的显示方式："
+      },
+      "demo_link": "请求演示"
+    },
+    "best_practices": {
+      "title": "最佳实践和技巧",
+      "compatibility": {
+        "title": "跨平台兼容性",
+        "test_extensively": "广泛测试：验证链接在主要邮件客户端中工作",
+        "keep_simple": "保持简单：避免过于复杂的参数组合",
+        "mobile_first": "移动优先：确保链接在移动设备上运行良好",
+        "fallback_options": "备用选项：提供替代联系方法"
+      },
+      "user_experience": {
+        "title": "用户体验指南",
+        "clear_text": "清晰的链接文本：使用解释操作的描述性文本",
+        "reasonable_defaults": "合理的默认值：预填有用信息而不会让人感到压倒",
+        "privacy": "隐私考虑：注意您预填的信息",
+        "professional_tone": "专业语调：为您的受众使用适当的语言"
+      },
+      "technical": {
+        "title": "技术考虑",
+        "character_limits": "字符限制：一些邮件客户端对URL长度有限制",
+        "encoding_accuracy": "编码准确性：始终正确编码特殊字符",
+        "security": "安全意识：避免在URL中包含敏感信息",
+        "analytics": "分析跟踪：考虑如何跟踪mailto链接的参与度"
+      }
+    },
+    "final_thoughts": {
+      "title": "最后的想法",
+      "description": "Mailto链接是简化网站和用户之间沟通的强大工具。正确实施时，它们在网页内容和邮件通信之间提供了无缝的桥梁。",
+      "key_success": "记住，成功实施mailto的关键在于理解用户需求，在不同平台上测试，并在提供价值的同时保持简单。",
+      "conclusion": "无论您是在构建联系表单、支持系统还是营销活动，精心制作的mailto链接都可以显著提高用户参与度和沟通效率。"
+    },
+    "additional_resources": {
+      "title": "其他资源",
+      "rfc_6068": "RFC 6068规范",
+      "w3c_html": "W3C HTML规范",
+      "compatibility_testing": "邮件客户端兼容性测试工具",
+      "encoding_reference": "URL编码参考指南"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 MailtoGen Pro. 保留所有权利。",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "contact": "联系我们"
+  }
+}

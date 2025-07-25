@@ -161,14 +161,23 @@ function hasAnyInput() {
 }
 
 // Initialize application when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize translation system first
-    if (typeof TranslationManager !== 'undefined') {
-        window.translationManager = new TranslationManager();
-        translationManager.init();
+document.addEventListener('DOMContentLoaded', async function() {
+    try {
+        // Initialize translation system first
+        if (typeof TranslationManager !== 'undefined') {
+            window.translationManager = new TranslationManager();
+            await window.translationManager.init();
+            console.log('Translation system initialized successfully!');
+        } else {
+            console.warn('TranslationManager not found');
+        }
+        
+        // Initialize main app
+        initializeApp();
+        console.log('Mailto Generator initialized successfully!');
+    } catch (error) {
+        console.error('Error initializing application:', error);
+        // Initialize app anyway without translations
+        initializeApp();
     }
-    
-    // Initialize main app
-    initializeApp();
-    console.log('Mailto Generator initialized successfully!');
 });
