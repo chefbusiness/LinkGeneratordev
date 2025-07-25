@@ -207,7 +207,8 @@ function setupLanguageSelector() {
                 'zh': 'https://mailtogenpro.com/zh/',
                 'pt': 'https://mailtogenpro.com/pt/',
                 'ja': 'https://mailtogenpro.com/ja/',
-                'it': 'https://mailtogenpro.com/it/'
+                'it': 'https://mailtogenpro.com/it/',
+                'ru': 'https://mailtogenpro.com/ru/'
             };
             
             // Reindirizza alla subdirectory corrispondente
