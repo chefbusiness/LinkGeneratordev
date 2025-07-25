@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You! - Mailto Link Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .thank-you-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .thank-you-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        .thank-you-title {
+            color: #007bff;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .thank-you-message {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+        .back-button {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+        .back-button:hover {
+            background: #0056b3;
+        }
+        .coffee-animation {
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="thank-you-icon coffee-animation">☕</div>
+        <h1 class="thank-you-title">Thank you so much!</h1>
+        <div class="thank-you-message">
+            <p><strong>Your donation has been processed successfully.</strong></p>
+            <p>Your support means a lot to me and motivates me to keep improving and maintaining useful tools like the Mailto Link Generator.</p>
+            <p>Every contribution helps me dedicate more time to developing projects that make developers' work easier.</p>
+            <p>I hope you continue enjoying the tool! ✨</p>
+        </div>
+        <a href="index.html" class="back-button">Back to Generator</a>
+        <p style="margin-top: 2rem; color: #666; font-style: italic;">—John</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">Questions or feedback? Reach me at <a href="mailto:john@chefbusiness.co" style="color: #007bff;">john@chefbusiness.co</a></p>
+    </div>
+</body>
+</html>

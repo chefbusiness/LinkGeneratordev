@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Cancelled - Mailto Link Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .cancelled-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .cancelled-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #6c757d;
+        }
+        .cancelled-title {
+            color: #6c757d;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .cancelled-message {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+        .back-button {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+        .back-button:hover {
+            background: #0056b3;
+        }
+        .secondary-button {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            margin: 0.5rem;
+        }
+        .secondary-button:hover {
+            background: #1e7e34;
+        }
+    </style>
+</head>
+<body>
+    <div class="cancelled-container">
+        <div class="cancelled-icon">🤷‍♂️</div>
+        <h1 class="cancelled-title">No worries!</h1>
+        <div class="cancelled-message">
+            <p><strong>Your donation has been cancelled.</strong></p>
+            <p>Don't worry, you can continue using the Mailto Link Generator completely free of charge.</p>
+            <p>If you change your mind later, you can always support the project whenever you'd like.</p>
+            <p>Thanks for considering a donation! 😊</p>
+        </div>
+        <div>
+            <a href="index.html" class="back-button">Back to Generator</a>
+            <a href="#" class="secondary-button" onclick="window.history.back(); return false;">Try Again</a>
+        </div>
+        <p style="margin-top: 2rem; color: #666; font-style: italic;">—John</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">Questions or feedback? Reach me at <a href="mailto:john@chefbusiness.co" style="color: #007bff;">john@chefbusiness.co</a></p>
+    </div>
+</body>
+</html>

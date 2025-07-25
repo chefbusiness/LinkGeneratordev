@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mailtogenpro.com/sitemap.xml
+
+# Optimizado para SEO
+# Permite el acceso completo a todos los crawlers
+# Incluye referencia al sitemap para mejor indexación
