@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>邮件链接生成器 - 立即创建专业电子邮件链接</title>
+    <meta name="description" content="生成专业的mailto链接，预填主题、正文、抄送、密送等。完美适用于开发者、营销人员和企业。免费在线工具。">
+    <meta name="keywords" content="邮件链接生成器, 电子邮件链接创建器, mailto URL, 电子邮件营销, 网页开发, 联系表单">
+    <meta name="author" content="Mailto Link Generator">
+    <link rel="canonical" href="https://mailtogenpro.com/zh/">
+    
+    <!-- Hreflang tags -->
+    <link rel="alternate" hreflang="en" href="https://mailtogenpro.com/">
+    <link rel="alternate" hreflang="es" href="https://mailtogenpro.com/es/">
+    <link rel="alternate" hreflang="de" href="https://mailtogenpro.com/de/">
+    <link rel="alternate" hreflang="fr" href="https://mailtogenpro.com/fr/">
+    <link rel="alternate" hreflang="zh" href="https://mailtogenpro.com/zh/">
+    <link rel="alternate" hreflang="x-default" href="https://mailtogenpro.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../favicon.ico">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-text">
+                        <h1>邮件链接生成器</h1>
+                        <p class="subtitle">立即创建专业电子邮件链接</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="generator-section">
+                <form id="mailtoForm" class="mailto-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="to">收件人</label>
+                            <input type="email" id="to" placeholder="recipient@example.cn">
+                        </div>
+                        <div class="form-group">
+                            <label for="cc">抄送</label>
+                            <input type="email" id="cc" placeholder="copy@example.cn">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bcc">密送</label>
+                            <input type="email" id="bcc" placeholder="bcc@example.cn">
+                        </div>
+                        <div class="form-group">
+                            <label for="linkText">链接文本</label>
+                            <input type="text" id="linkText" placeholder="发送邮件" value="发送邮件">
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="subject">主题</label>
+                        <input type="text" id="subject" placeholder="邮件主题">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="body">正文</label>
+                        <textarea id="body" rows="4" placeholder="邮件内容..."></textarea>
+                    </div>
+                    <button type="button" class="generate-btn" onclick="generateMailto()">生成我的邮件链接</button>
+                </form>
+
+                <div class="results-section" id="resultsSection" style="display: none;">
+                    <div class="result-group">
+                        <h3>邮件链接</h3>
+                        <div class="result-box">
+                            <code id="mailtoLink"></code>
+                            <button class="copy-btn" onclick="copyToClipboard('mailtoLink')">复制</button>
+                        </div>
+                    </div>
+
+                    <div class="result-group">
+                        <h3>HTML代码</h3>
+                        <div class="result-box">
+                            <code id="htmlCode"></code>
+                            <button class="copy-btn" onclick="copyToClipboard('htmlCode')">复制</button>
+                        </div>
+                    </div>
+
+                    <div class="result-group">
+                        <h3>测试链接</h3>
+                        <div class="test-box">
+                            <a id="previewLink" href="#" class="test-link">
+                                <span id="previewText">发送邮件</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- First Donation Section - After Generator -->
+        <section class="donation-section" style="background-color: #f8f9fa; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6;">
+            <div class="container">
+                <div class="donation-content">
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">支持这个项目</h2>
+                    
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">如果这个工具对您有帮助，请考虑通过小额捐赠来支持其开发。</p>
+                    
+                    <div class="donation-buttons" style="margin-bottom: 2rem;">
+                        <a href="#" class="coffee-btn" onclick="donate(4)" style="font-size: 1.1rem; padding: 1rem 2.5rem;">请我喝咖啡 ☕</a>
+                    </div>
+                    
+                    <p style="font-size: 1rem; color: #666; margin-bottom: 1.5rem;">致已经捐赠的慷慨人士<br>
+                    谢谢！❤️</p>
+                
+                <p style="font-size: 1.1rem; font-weight: 500;">更重要的是，让我告诉您关于mailto链接的知识，这样您就知道如何<br>
+                <strong>自己生成它们</strong>。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <p style="margin-bottom: 2rem; font-style: italic;">通过我们的完整指南掌握mailto链接的艺术。学习创建在所有平台和邮件客户端上完美运行的专业电子邮件链接。</p>
+                
+                <div class="table-of-contents">
+                    <h3>完整的Mailto链接指南</h3>
+                    <ul>
+                        <li><a href="#understanding-mailto">理解mailto链接</a></li>
+                        <li><a href="#basic-syntax">基本mailto语法</a></li>
+                        <li><a href="#simple-email">创建简单的电子邮件链接</a></li>
+                        <li><a href="#advanced-recipients">高级收件人管理</a></li>
+                        <li><a href="#empty-recipient">处理空收件人</a></li>
+                        <li><a href="#parameter-structure">参数结构和语法</a></li>
+                        <li><a href="#subject-lines">添加主题行</a></li>
+                        <li><a href="#encoding-guide">URL编码基础</a></li>
+                        <li><a href="#complete-emails">完整的电子邮件模板</a></li>
+                        <li><a href="#professional-examples">专业用例</a></li>
+                        <li><a href="#html-implementation">HTML实现</a></li>
+                        <li><a href="#best-practices">最佳实践和技巧</a></li>
+                        <li><a href="#final-thoughts">最后的思考</a></li>
+                    </ul>
+                </div>
+
+                <h2 id="understanding-mailto">理解mailto链接</h2>
+                <p>mailto链接是一个强大的HTML超链接，可以立即打开用户的默认邮件客户端并预填信息。这消除了用户手动复制电子邮件地址的需要，使沟通变得流畅和专业。</p>
+                <p>我们将探索技术结构和实际实现，帮助您创建有效的电子邮件链接。</p>
+                
+                <h3 id="basic-syntax">基本mailto语法</h3>
+                <p>每个mailto链接都以协议标识符开始：</p>
+                <div class="code-example">
+                    <code>mailto:</code>
+                </div>
+                
+                <h3 id="simple-email">创建简单的电子邮件链接</h3>
+                <p>最基本的形式只包含冒号后面的收件人电子邮件地址：</p>
+                <div class="code-example">
+                    <code>mailto:contact@yourcompany.cn</code>
+                </div>
+                <p>这创建了一个可点击的链接，打开用户的邮件客户端并预填收件人字段。</p>
+                
+                <h3 id="advanced-recipients">高级收件人管理</h3>
+                <p>虽然单个收件人最可靠，但您可以使用特定技术包含多个收件人。但是，邮件客户端之间的兼容性有所不同，因此彻底测试是必要的。</p>
+                
+                <h4>收件人字段中的多个收件人</h4>
+                <p>对于多个主要收件人，用逗号分隔电子邮件地址（不带空格）：</p>
+                <div class="code-example">
+                    <code>mailto:manager@company.cn,team@company.cn,hr@company.cn</code>
+                </div>
+                
+                <h4>替代分隔符方法</h4>
+                <p>如果逗号在某些邮件客户端中不起作用，请尝试分号：</p>
+                <div class="code-example">
+                    <code>mailto:sales@company.cn;support@company.cn;billing@company.cn</code>
+                </div>
+                
+                <h4>推荐方法：分布式收件人</h4>
+                <p>最可靠的方法是在收件人、抄送和密送字段之间分布收件人：</p>
+                <div class="code-example">
+                    <code>mailto:primary@company.cn?cc=copy@company.cn&bcc=archive@company.cn</code>
+                </div>
+                <p><strong>专业提示：</strong>在部署之前，始终在不同的邮件客户端（Gmail、Outlook、Apple Mail）中测试您的mailto链接。</p>
+                
+                <h3 id="empty-recipient">处理空收件人</h3>
+                <p>创建没有预定义收件人的mailto链接允许用户选择自己的收件人。虽然不太常见，但这种方法有特定的用例，如"通过电子邮件分享"按钮。</p>
+                
+                <h4>空收件人的标准格式</h4>
+                <p>最兼容的方法是在mailto后直接使用问号：</p>
+                <div class="code-example">
+                    <code>mailto:?subject=看看这个&body=我觉得这可能会让您感兴趣</code>
+                </div>
+                
+                <h4>替代格式</h4>
+                <p>一些邮件客户端接受这些变体：</p>
+                <div class="code-example">
+                    <code>mailto: ?subject=新闻订阅</code>
+                </div>
+                <div class="code-example">
+                    <code>mailto:?to=&subject=联系表单</code>
+                </div>
+                
+                <p><strong>重要：</strong>空收件人链接的兼容性有限。在实施之前请彻底测试。</p>
+                
+                <h3 id="parameter-structure">参数结构和语法</h3>
+                <p>mailto链接使用URL参数语法和特定分隔符：</p>
+                <ul>
+                    <li><strong>问号(?)：</strong>将电子邮件地址与第一个参数分开</li>
+                    <li><strong>和号(&)：</strong>分隔附加参数</li>
+                </ul>
+                
+                <h4>参数结构示例</h4>
+                <div class="code-example">
+                    <code>mailto:email@domain.cn</code><br>
+                    <code>mailto:email@domain.cn?subject=主题</code><br>
+                    <code>mailto:email@domain.cn?subject=主题&body=消息</code><br>
+                    <code>mailto:email@domain.cn?cc=copy@domain.cn&bcc=hidden@domain.cn&subject=主题&body=消息</code>
+                </div>
+                
+                <h3 id="subject-lines">添加主题行</h3>
+                <p>主题行使您的mailto链接更专业，并帮助收件人立即理解电子邮件的目的。</p>
+                
+                <h4>基本主题示例</h4>
+                <p>这是一个带有清晰主题行的商业查询：</p>
+                <div class="code-example">
+                    <code>mailto:sales@techcompany.cn?subject=产品演示请求</code>
+                </div>
+                
+                <h3 id="encoding-guide">URL编码基础</h3>
+                <p>mailto链接中的特殊字符必须进行URL编码，以确保在所有邮件客户端和浏览器中正常运行。</p>
+                
+                <h4>常见字符编码</h4>
+                <p>以下是mailto链接最常用的URL编码：</p>
+                <ul>
+                    <li><strong>%20</strong> = 空格</li>
+                    <li><strong>%21</strong> = ! (感叹号)</li>
+                    <li><strong>%22</strong> = " (引号)</li>
+                    <li><strong>%26</strong> = & (和号)</li>
+                    <li><strong>%2C</strong> = , (逗号)</li>
+                    <li><strong>%3A</strong> = : (冒号)</li>
+                    <li><strong>%3F</strong> = ? (问号)</li>
+                    <li><strong>%0A</strong> = 换行符</li>
+                </ul>
+                
+                <h4>为什么编码很重要</h4>
+                <p>正确的编码确保您的mailto链接在以下环境中一致工作：</p>
+                <ul>
+                    <li>不同的网络浏览器（Chrome、Firefox、Safari、Edge）</li>
+                    <li>各种邮件客户端（Gmail、Outlook、Apple Mail、Thunderbird）</li>
+                    <li>移动和桌面平台</li>
+                </ul>
+                
+                <p><strong>💡 专业提示：</strong>使用上面的mailto链接生成器自动处理所有编码！</p>
+                
+                <h3 id="complete-emails">完整的电子邮件模板</h3>
+                <p>结合主题行和正文内容创建完整的电子邮件模板，为您和收件人节省时间。</p>
+                
+                <h4>客户支持模板</h4>
+                <p>完美适用于帮助台或支持页面：</p>
+                <div class="code-example">
+                    <code>mailto:support@yourcompany.cn?subject=技术支持请求&body=请详细描述您的问题：%0A%0A设备：%20%0A浏览器：%20%0A重现步骤：%20</code>
+                </div>
+                
+                <h3 id="professional-examples">专业用例</h3>
+                <p>这是一个包含所有参数的完整商业电子邮件模板：</p>
+                
+                <h4>项目协作电子邮件</h4>
+                <ul>
+                    <li><strong>收件人：</strong>project.manager@company.cn</li>
+                    <li><strong>抄送：</strong>team.leader@company.cn</li>
+                    <li><strong>密送：</strong>archive@company.cn</li>
+                    <li><strong>主题：</strong>项目提案提交</li>
+                    <li><strong>正文：</strong>亲爱的项目经理，我正在提交我们的第四季度项目提案供审查。请在下面找到关键详细信息，如果您需要其他信息，请告诉我。此致敬礼，[您的姓名]</li>
+                </ul>
+                <div class="code-example">
+                    <code>mailto:project.manager@company.cn?cc=team.leader@company.cn&bcc=archive@company.cn&subject=项目提案提交&body=亲爱的项目经理，%0A%0A我正在提交我们的第四季度项目提案供审查。请在下面找到关键详细信息，如果您需要其他信息，请告诉我。%0A%0A此致敬礼，%0A[您的姓名]</code>
+                </div>
+                
+                <h4>其他专业模板</h4>
+                <p><strong>会议请求：</strong></p>
+                <div class="code-example">
+                    <code>mailto:colleague@company.cn?subject=会议请求-项目审查&body=您好，%0A%0A我们能安排一个30分钟的会议来讨论项目状态吗？%0A%0A可用时间：%0A-明天下午2-4点%0A-周五上午10-12点%0A%0A谢谢！</code>
+                </div>
+                
+                <h3 id="html-implementation">HTML实现</h3>
+                <p>将您的mailto链接转换为可点击的HTML需要适当的锚标签结构和属性。</p>
+                
+                <h4>基本HTML结构</h4>
+                <p>HTML锚标签由开始和结束元素组成：</p>
+                <div class="code-example">
+                    <code>&lt;a&gt;&lt;/a&gt;</code>
+                </div>
+                
+                <h4>添加链接文本</h4>
+                <p>标签之间的文本成为可点击的链接文本：</p>
+                <div class="code-example">
+                    <code>&lt;a&gt;联系我们的销售团队&lt;/a&gt;</code>
+                </div>
+                
+                <h4>添加href属性</h4>
+                <p>href属性包含您的mailto链接：</p>
+                <div class="code-example">
+                    <code>&lt;a href="mailto:sales@company.cn?subject=销售查询"&gt;联系我们的销售团队&lt;/a&gt;</code>
+                </div>
+                
+                <h4>增强的HTML与可访问性</h4>
+                <p>为了更好的可访问性和用户体验，添加描述性属性：</p>
+                <div class="code-example">
+                    <code>&lt;a href="mailto:support@company.cn?subject=技术支持" title="发送电子邮件获取技术支持" aria-label="发送电子邮件给技术支持团队"&gt;获取技术支持&lt;/a&gt;</code>
+                </div>
+                
+                <h4>实时示例</h4>
+                <p>这是链接对用户的显示方式：</p>
+                <div class="test-box">
+                    <a href="mailto:demo@company.cn?subject=演示请求" class="test-link">请求演示</a>
+                </div>
+                
+                <h3 id="best-practices">最佳实践和技巧</h3>
+                
+                <h4>跨平台兼容性</h4>
+                <ul>
+                    <li><strong>广泛测试：</strong>验证链接在主要邮件客户端中的工作情况</li>
+                    <li><strong>保持简单：</strong>避免过于复杂的参数组合</li>
+                    <li><strong>移动优先：</strong>确保链接在移动设备上运行良好</li>
+                    <li><strong>备用选项：</strong>提供替代联系方式</li>
+                </ul>
+                
+                <h4>用户体验指南</h4>
+                <ul>
+                    <li><strong>清晰的链接文本：</strong>使用描述性文本解释操作</li>
+                    <li><strong>合理的默认值：</strong>预填有用信息而不会让人感到压倒</li>
+                    <li><strong>隐私考虑：</strong>小心预填的信息</li>
+                    <li><strong>专业语调：</strong>使用适合您受众的语言</li>
+                </ul>
+                
+                <h4>技术考虑</h4>
+                <ul>
+                    <li><strong>字符限制：</strong>一些邮件客户端有URL长度限制</li>
+                    <li><strong>编码准确性：</strong>始终正确编码特殊字符</li>
+                    <li><strong>安全意识：</strong>避免在URL中包含敏感信息</li>
+                    <li><strong>分析跟踪：</strong>考虑如何跟踪mailto链接参与度</li>
+                </ul>
+                
+                <h3 id="final-thoughts">最后的思考</h3>
+                <p>mailto链接是简化网站和用户之间沟通的强大工具。正确实施时，它们在网络内容和电子邮件通信之间提供了无缝的桥梁。</p>
+                
+                <p>记住，成功的mailto实施的关键在于理解用户需求、跨平台测试，以及在提供价值的同时保持简单。</p>
+                
+                <p><strong>其他资源：</strong></p>
+                <ul>
+                    <li><a href="https://tools.ietf.org/html/rfc6068" target="_blank" rel="noopener">RFC 6068规范</a></li>
+                    <li><a href="https://html.spec.whatwg.org/multipage/links.html#links" target="_blank" rel="noopener">W3C HTML规范</a></li>
+                    <li><a href="https://www.emailonacid.com/" target="_blank" rel="noopener">邮件客户端兼容性测试工具</a></li>
+                    <li><a href="https://www.w3schools.com/tags/ref_urlencode.asp" target="_blank" rel="noopener">URL编码参考指南</a></li>
+                </ul>
+                
+                <p>无论您是构建联系表单、支持系统还是营销活动，精心制作的mailto链接都可以显著提高用户参与度和沟通效率。</p>
+            </div>
+        </section>
+
+        <section class="donation-section">
+            <div class="donation-content">
+                <h2>最后一件事...</h2>
+                <p>构建这个<strong>邮件链接生成器</strong>对我来说是一个充满激情的项目。它完全免费使用，我希望它能为您节省时间并使您的电子邮件工作流程更高效。</p>
+                
+                <p>如果这个工具对您有帮助，请考虑通过小额咖啡捐赠来支持其开发。每一份贡献都帮助我投入更多时间来改进和维护这样的工具。</p>
+                
+                <p>您的支持对我意义重大！☕✨</p>
+                
+                <div class="donation-buttons" style="margin: 2rem 0;">
+                    <a href="#" class="coffee-btn" onclick="donate(4)">请我喝咖啡</a>
+                </div>
+                
+                <p style="margin-top: 2rem; font-style: italic;">感谢您使用我的工具，希望它能为您的项目带来效率！</p>
+                
+                <p style="margin-top: 1rem; color: #007bff; font-weight: 500;">—John</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">有问题或反馈？请联系我：<a href="mailto:john@chefbusiness.co" style="color: #007bff; text-decoration: none;">john@chefbusiness.co</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 MailtoGen Pro. 版权所有。</p>
+                <div class="footer-links">
+                    <a href="#">隐私政策</a>
+                    <a href="#">使用条款</a>
+                    <a href="#">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Language Selector - Fixed Bottom Left -->
+    <div class="language-selector">
+        <button class="language-btn" id="languageBtn">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23DE2910'/%3E%3Cpolygon fill='%23FFDE00' points='12,6 14.5,12.5 21,12.5 16,16.5 18.5,23 12,19 5.5,23 8,16.5 3,12.5 9.5,12.5'/%3E%3C/svg%3E" alt="中文" class="flag-icon" id="currentFlag">
+            <span id="currentLang">中文</span>
+            <span class="dropdown-arrow">▼</span>
+        </button>
+        <div class="language-menu" id="languageMenu">
+            <div class="language-option" data-lang="en">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23012169'/%3E%3Cpath d='M0 0l60 30M60 0L0 30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0l60 30M60 0L0 30' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E" alt="English" class="flag-icon">
+                <span>English</span>
+            </div>
+            <div class="language-option" data-lang="es">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23AA151B'/%3E%3Crect width='60' height='10' y='10' fill='%23F1BF00'/%3E%3C/svg%3E" alt="Español" class="flag-icon">
+                <span>Español</span>
+            </div>
+            <div class="language-option" data-lang="zh">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23DE2910'/%3E%3Cpolygon fill='%23FFDE00' points='12,6 14.5,12.5 21,12.5 16,16.5 18.5,23 12,19 5.5,23 8,16.5 3,12.5 9.5,12.5'/%3E%3C/svg%3E" alt="中文" class="flag-icon">
+                <span>中文</span>
+            </div>
+            <div class="language-option" data-lang="fr">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='20' height='30' fill='%23002395'/%3E%3Crect x='20' width='20' height='30' fill='%23FFFFFF'/%3E%3Crect x='40' width='20' height='30' fill='%23ED2939'/%3E%3C/svg%3E" alt="Français" class="flag-icon">
+                <span>Français</span>
+            </div>
+            <div class="language-option" data-lang="de">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='10' fill='%23000000'/%3E%3Crect y='10' width='60' height='10' fill='%23DD0000'/%3E%3Crect y='20' width='60' height='10' fill='%23FFCE00'/%3E%3C/svg%3E" alt="Deutsch" class="flag-icon">
+                <span>Deutsch</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
