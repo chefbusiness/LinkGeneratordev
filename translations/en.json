@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "title": "Mailto Link Generator - Create Professional Email Links Instantly",
+    "description": "Generate professional mailto links with pre-filled subject, body, CC, BCC, and more. Perfect for developers, marketers, and businesses. Free online tool.",
+    "keywords": "mailto link generator, email link creator, mailto URL, email marketing, web development, contact forms"
+  },
+  "header": {
+    "title": "Mailto Link Generator",
+    "subtitle": "Create professional email links instantly"
+  },
+  "form": {
+    "email_label": "Email Address",
+    "email_placeholder": "recipient@example.com",
+    "subject_label": "Subject",
+    "subject_placeholder": "Enter email subject",
+    "body_label": "Message Body",
+    "body_placeholder": "Enter your message here...",
+    "cc_label": "CC (Carbon Copy)",
+    "cc_placeholder": "cc@example.com",
+    "bcc_label": "BCC (Blind Carbon Copy)",
+    "bcc_placeholder": "bcc@example.com",
+    "generate_button": "Generate Mailto Link",
+    "copy_button": "Copy Link",
+    "test_button": "Test Link",
+    "reset_button": "Reset Form",
+    "validation": {
+      "to_required": "Please enter at least one email address in the \"To\" field",
+      "invalid_email": "Please enter a valid email address"
+    }
+  },
+  "results": {
+    "title": "Mailto link",
+    "html_title": "HTML code",
+    "test_title": "Test the link",
+    "copy_button": "Copy",
+    "copy_success": "Copied!",
+    "copy_error": "Error copying to clipboard"
+  },
+  "donation": {
+    "title": "Support This Project",
+    "description": "If this tool has been helpful, consider supporting its development with a small donation.",
+    "button_text": "Buy me a coffee ☕"
+  },
+  "guide": {
+    "title": "Complete Guide to Mailto Links",
+    "what_are_mailto": {
+      "title": "What are Mailto Links?",
+      "description": "Mailto links are special URLs that open the user's default email client with pre-filled information. They're essential for web developers and marketers who want to streamline the email communication process."
+    },
+    "examples": {
+      "title": "Practical Examples",
+      "description": "Here are some common use cases for mailto links:",
+      "contact_us": "Contact us for support",
+      "feedback": "Send feedback about our service",
+      "newsletter": "Subscribe to our newsletter",
+      "report_bug": "Report a bug or issue"
+    },
+    "implementation": {
+      "title": "Implementation Tips",
+      "description": "Best practices for implementing mailto links in your projects:",
+      "fallback": "Always provide fallback options",
+      "testing": "Test across different platforms",
+      "validation": "Validate email addresses before generating links",
+      "user_feedback": "Provide clear user feedback"
+    },
+    "basic_syntax": {
+      "title": "Basic Mailto Syntax",
+      "simple_example": "Simple email link:",
+      "with_subject": "With subject line:",
+      "with_body": "With message body:"
+    },
+    "advanced_features": {
+      "title": "Advanced Mailto Features",
+      "multiple_recipients": {
+        "title": "Multiple Recipients",
+        "description": "Send emails to multiple people by separating addresses with commas:"
+      },
+      "cc_bcc": {
+        "title": "CC and BCC",
+        "description": "Include carbon copy and blind carbon copy recipients:"
+      },
+      "complex_example": {
+        "title": "Complex Example",
+        "description": "Combining multiple parameters:"
+      }
+    },
+    "best_practices": {
+      "title": "Best Practices",
+      "encoding": {
+        "title": "URL Encoding",
+        "description": "Always encode special characters in your mailto links:"
+      },
+      "user_experience": {
+        "title": "User Experience",
+        "tips": [
+          "Keep subject lines concise and descriptive",
+          "Pre-fill helpful information in the body",
+          "Test links across different email clients",
+          "Provide alternative contact methods"
+        ]
+      },
+      "accessibility": {
+        "title": "Accessibility",
+        "tips": [
+          "Use descriptive link text",
+          "Include aria-label attributes for screen readers",
+          "Ensure sufficient color contrast",
+          "Test with keyboard navigation"
+        ]
+      }
+    },
+    "troubleshooting": {
+      "title": "Troubleshooting Common Issues",
+      "no_email_client": {
+        "title": "No Default Email Client",
+        "description": "Some users may not have a default email client configured. Consider providing alternative contact methods or instructions for setting up email clients."
+      },
+      "mobile_compatibility": {
+        "title": "Mobile Compatibility",
+        "description": "Mailto links work differently on mobile devices. Test your links on various devices and email apps to ensure compatibility."
+      },
+      "character_limits": {
+        "title": "Character Limits",
+        "description": "Some email clients have limits on URL length. Keep your mailto links concise and test with long content."
+      }
+    },
+    "encoding_guide": {
+      "title": "URL Encoding Essentials",
+      "description": "Proper URL encoding is crucial for mailto links to work correctly:",
+      "common_characters": "Common characters that need encoding:",
+      "space": "Space",
+      "newline": "New line",
+      "ampersand": "Ampersand",
+      "question_mark": "Question mark",
+      "hash": "Hash/Pound"
+    },
+    "email_clients": {
+      "title": "Email Client Compatibility",
+      "description": "Different email clients handle mailto links differently:",
+      "desktop_clients": {
+        "title": "Desktop Clients",
+        "outlook": "Microsoft Outlook - Full support for all parameters",
+        "thunderbird": "Mozilla Thunderbird - Excellent compatibility",
+        "apple_mail": "Apple Mail - Good support with minor limitations"
+      },
+      "webmail_services": {
+        "title": "Webmail Services",
+        "gmail": "Gmail - Limited support, opens in browser",
+        "outlook_web": "Outlook.com - Good compatibility",
+        "yahoo": "Yahoo Mail - Basic support"
+      },
+      "mobile_apps": {
+        "title": "Mobile Email Apps",
+        "ios_mail": "iOS Mail - Excellent support",
+        "android_gmail": "Android Gmail - Good compatibility",
+        "third_party": "Third-party apps - Varies by application"
+      }
+    },
+    "security_considerations": {
+      "title": "Security Considerations",
+      "description": "When implementing mailto links, consider these security aspects:",
+      "email_harvesting": {
+        "title": "Email Harvesting Protection",
+        "description": "Protect email addresses from spam bots:",
+        "techniques": [
+          "Use JavaScript to generate mailto links dynamically",
+          "Implement CAPTCHA for contact forms",
+          "Consider using contact forms instead of direct mailto links",
+          "Obfuscate email addresses in the HTML source"
+        ]
+      },
+      "data_validation": {
+        "title": "Data Validation",
+        "description": "Always validate and sanitize user input:",
+        "tips": [
+          "Validate email address format",
+          "Limit message length",
+          "Filter out malicious content",
+          "Use proper encoding for all parameters"
+        ]
+      }
+    },
+    "additional_resources": {
+      "title": "Additional Resources",
+      "rfc_6068": "RFC 6068 specification",
+      "w3c_html": "W3C HTML specification",
+      "compatibility_testing": "Email client compatibility testing tools",
+      "encoding_reference": "URL encoding reference guides"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 MailtoGen Pro. All rights reserved.",
+    "made_with": "Made with ❤️ for developers and marketers"
+  }
+}

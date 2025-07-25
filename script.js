@@ -14,13 +14,15 @@ function generateMailtoLink(validateInput = false) {
     if (validateInput) {
         // Validate that at least 'to' field is filled
         if (!to) {
-            alert('Please enter at least one email address in the "To" field');
+            const errorMessage = translationManager ? translationManager.t('form.validation.to_required') : 'Please enter at least one email address in the "To" field';
+            alert(errorMessage);
             return;
         }
 
         // Validate email format only if not empty
         if (to && !isValidEmail(to)) {
-            alert('Please enter a valid email address');
+            const errorMessage = translationManager ? translationManager.t('form.validation.invalid_email') : 'Please enter a valid email address';
+            alert(errorMessage);
             return;
         }
     }
@@ -106,7 +108,10 @@ function copyToClipboard(elementId) {
         // Visual feedback
         const button = element.parentNode.querySelector('.copy-btn');
         const originalText = button.textContent;
-        button.textContent = 'Copied!';
+        
+        // Use translation if available
+        const successMessage = translationManager ? translationManager.t('results.copy_success') : 'Copied!';
+        button.textContent = successMessage;
         button.style.background = '#28a745';
         
         setTimeout(() => {
@@ -115,7 +120,8 @@ function copyToClipboard(elementId) {
         }, 2000);
     }).catch(function(err) {
         console.error('Error copying: ', err);
-        alert('Error copying to clipboard');
+        const errorMessage = translationManager ? translationManager.t('results.copy_error') : 'Error copying to clipboard';
+        alert(errorMessage);
     });
 }
 
@@ -156,6 +162,13 @@ function hasAnyInput() {
 
 // Initialize application when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize translation system first
+    if (typeof TranslationManager !== 'undefined') {
+        window.translationManager = new TranslationManager();
+        translationManager.init();
+    }
+    
+    // Initialize main app
     initializeApp();
     console.log('Mailto Generator initialized successfully!');
 });
