@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Links Mailto - Crie Links de Email Profissionais Instantaneamente</title>
+    <meta name="description" content="Gere links mailto profissionais com assunto, corpo, CC, BCC e mais pré-preenchidos. Perfeito para desenvolvedores, profissionais de marketing e empresas. Ferramenta gratuita online.">
+    <meta name="keywords" content="gerador links mailto, criador links email, URL mailto, marketing por email, desenvolvimento web, formulários de contato">
+    <meta name="author" content="Mailto Link Generator">
+    <link rel="canonical" href="https://mailtogenpro.com/pt/">
+    
+    <!-- Hreflang tags -->
+    <link rel="alternate" hreflang="en" href="https://mailtogenpro.com/">
+    <link rel="alternate" hreflang="es" href="https://mailtogenpro.com/es/">
+    <link rel="alternate" hreflang="de" href="https://mailtogenpro.com/de/">
+    <link rel="alternate" hreflang="fr" href="https://mailtogenpro.com/fr/">
+    <link rel="alternate" hreflang="zh" href="https://mailtogenpro.com/zh/">
+    <link rel="alternate" hreflang="pt" href="https://mailtogenpro.com/pt/">
+    <link rel="alternate" hreflang="x-default" href="https://mailtogenpro.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../favicon.ico">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-text">
+                        <h1>Gerador de Links Mailto</h1>
+                        <p class="subtitle">Crie links de email profissionais instantaneamente</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="generator-section">
+                <form id="mailtoForm" class="mailto-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="to">Para</label>
+                            <input type="email" id="to" placeholder="destinatario@exemplo.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="cc">Cc</label>
+                            <input type="email" id="cc" placeholder="copia@exemplo.com">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bcc">Cco</label>
+                            <input type="email" id="bcc" placeholder="copia_oculta@exemplo.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="linkText">Texto do link</label>
+                            <input type="text" id="linkText" placeholder="Enviar email" value="Enviar email">
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="subject">Assunto</label>
+                        <input type="text" id="subject" placeholder="Assunto do email">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="body">Corpo</label>
+                        <textarea id="body" rows="4" placeholder="Conteúdo do email..."></textarea>
+                    </div>
+                    <button type="button" class="generate-btn" onclick="generateMailto()">Gerar meu link mailto</button>
+                </form>
+
+                <div class="results-section" id="resultsSection" style="display: none;">
+                    <div class="result-group">
+                        <h3>Link mailto</h3>
+                        <div class="result-box">
+                            <code id="mailtoLink"></code>
+                            <button class="copy-btn" onclick="copyToClipboard('mailtoLink')">Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="result-group">
+                        <h3>Código HTML</h3>
+                        <div class="result-box">
+                            <code id="htmlCode"></code>
+                            <button class="copy-btn" onclick="copyToClipboard('htmlCode')">Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="result-group">
+                        <h3>Testar o link</h3>
+                        <div class="test-box">
+                            <a id="previewLink" href="#" class="test-link">
+                                <span id="previewText">Enviar email</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- First Donation Section - After Generator -->
+        <section class="donation-section" style="background-color: #f8f9fa; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6;">
+            <div class="container">
+                <div class="donation-content">
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">Apoie Este Projeto</h2>
+                    
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">Se esta ferramenta foi útil para você, considere apoiar seu desenvolvimento com uma pequena doação.</p>
+                    
+                    <div class="donation-buttons" style="margin-bottom: 2rem;">
+                        <a href="#" class="coffee-btn" onclick="donate(4)" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Me pague um café ☕</a>
+                    </div>
+                    
+                    <p style="font-size: 1rem; color: #666; margin-bottom: 1.5rem;">Para as pessoas generosas que já fizeram uma doação<br>
+                    Obrigado! ❤️</p>
+                
+                <p style="font-size: 1.1rem; font-weight: 500;">Mais importante ainda, deixe-me falar sobre links mailto para que você saiba como<br>
+                <strong>gerá-los você mesmo</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <p style="margin-bottom: 2rem; font-style: italic;">Domine a arte dos links mailto com nosso guia abrangente. Aprenda a criar links de email profissionais que funcionam perfeitamente em todas as plataformas e clientes de email.</p>
+                
+                <div class="table-of-contents">
+                    <h3>Guia Completo de Links Mailto</h3>
+                    <ul>
+                        <li><a href="#understanding-mailto">Entendendo links mailto</a></li>
+                        <li><a href="#basic-syntax">Sintaxe básica mailto</a></li>
+                        <li><a href="#simple-email">Criando links de email simples</a></li>
+                        <li><a href="#advanced-recipients">Gerenciamento avançado de destinatários</a></li>
+                        <li><a href="#empty-recipient">Lidando com destinatários vazios</a></li>
+                        <li><a href="#parameter-structure">Estrutura e sintaxe de parâmetros</a></li>
+                        <li><a href="#subject-lines">Adicionando linhas de assunto</a></li>
+                        <li><a href="#encoding-guide">Fundamentos de codificação URL</a></li>
+                        <li><a href="#complete-emails">Modelos de email completos</a></li>
+                        <li><a href="#professional-examples">Casos de uso profissionais</a></li>
+                        <li><a href="#html-implementation">Implementação HTML</a></li>
+                        <li><a href="#best-practices">Melhores práticas e dicas</a></li>
+                        <li><a href="#final-thoughts">Considerações finais</a></li>
+                    </ul>
+                </div>
+
+                <h2 id="understanding-mailto">Entendendo links mailto</h2>
+                <p>Um link mailto é um hiperlink HTML poderoso que abre instantaneamente o cliente de email padrão do usuário com informações pré-preenchidas. Isso elimina a necessidade de os usuários copiarem manualmente endereços de email, tornando a comunicação fluida e profissional.</p>
+                <p>Exploraremos tanto a estrutura técnica quanto a implementação prática para ajudá-lo a criar links de email eficazes.</p>
+                
+                <h3 id="basic-syntax">Sintaxe básica mailto</h3>
+                <p>Cada link mailto começa com o identificador de protocolo:</p>
+                <div class="code-example">
+                    <code>mailto:</code>
+                </div>
+                
+                <h3 id="simple-email">Criando links de email simples</h3>
+                <p>A forma mais básica inclui apenas o endereço de email do destinatário imediatamente após os dois pontos:</p>
+                <div class="code-example">
+                    <code>mailto:contato@suaempresa.com</code>
+                </div>
+                <p>Isso cria um link clicável que abre o cliente de email do usuário com o campo destinatário pré-preenchido.</p>
+                
+                <h3 id="advanced-recipients">Gerenciamento avançado de destinatários</h3>
+                <p>Embora destinatários únicos sejam mais confiáveis, você pode incluir múltiplos destinatários usando técnicas específicas. No entanto, a compatibilidade varia entre clientes de email, então testes minuciosos são essenciais.</p>
+                
+                <h4>Múltiplos destinatários no campo PARA</h4>
+                <p>Para múltiplos destinatários principais, separe endereços de email com vírgulas (sem espaços):</p>
+                <div class="code-example">
+                    <code>mailto:gerente@empresa.com,equipe@empresa.com,rh@empresa.com</code>
+                </div>
+                
+                <h4>Método de separador alternativo</h4>
+                <p>Se vírgulas não funcionarem com certos clientes de email, tente ponto e vírgula:</p>
+                <div class="code-example">
+                    <code>mailto:vendas@empresa.com;suporte@empresa.com;faturamento@empresa.com</code>
+                </div>
+                
+                <h4>Abordagem recomendada: Destinatários distribuídos</h4>
+                <p>O método mais confiável distribui destinatários entre os campos PARA, CC e CCO:</p>
+                <div class="code-example">
+                    <code>mailto:principal@empresa.com?cc=copia@empresa.com&bcc=arquivo@empresa.com</code>
+                </div>
+                <p><strong>Dica profissional:</strong> Sempre teste seus links mailto em diferentes clientes de email (Gmail, Outlook, Apple Mail) antes da implementação.</p>
+                
+                <h3 id="empty-recipient">Lidando com destinatários vazios</h3>
+                <p>Criar links mailto sem destinatários predefinidos permite que os usuários escolham seus próprios destinatários. Embora menos comum, essa abordagem tem casos de uso específicos como botões "compartilhar por email".</p>
+                
+                <h4>Formato padrão de destinatário vazio</h4>
+                <p>A abordagem mais compatível usa um ponto de interrogação diretamente após mailto:</p>
+                <div class="code-example">
+                    <code>mailto:?subject=Confira%20isso&body=Achei%20que%20você%20poderia%20achar%20interessante</code>
+                </div>
+                
+                <h4>Formatos alternativos</h4>
+                <p>Alguns clientes de email aceitam essas variações:</p>
+                <div class="code-example">
+                    <code>mailto: ?subject=Inscrição%20Newsletter</code>
+                </div>
+                <div class="code-example">
+                    <code>mailto:?to=&subject=Formulário%20de%20Contato</code>
+                </div>
+                
+                <p><strong>Importante:</strong> Links de destinatário vazio têm compatibilidade limitada. Teste minuciosamente antes da implementação.</p>
+                
+                <h3 id="parameter-structure">Estrutura e sintaxe de parâmetros</h3>
+                <p>Links mailto usam sintaxe de parâmetros URL com delimitadores específicos:</p>
+                <ul>
+                    <li><strong>Ponto de interrogação (?):</strong> Separa o endereço de email do primeiro parâmetro</li>
+                    <li><strong>E comercial (&):</strong> Separa parâmetros adicionais</li>
+                </ul>
+                
+                <h4>Exemplos de estrutura de parâmetros</h4>
+                <div class="code-example">
+                    <code>mailto:email@dominio.com</code><br>
+                    <code>mailto:email@dominio.com?subject=Assunto</code><br>
+                    <code>mailto:email@dominio.com?subject=Assunto&body=Mensagem</code><br>
+                    <code>mailto:email@dominio.com?cc=copia@dominio.com&bcc=oculto@dominio.com&subject=Assunto&body=Mensagem</code>
+                </div>
+                
+                <h3 id="subject-lines">Adicionando linhas de assunto</h3>
+                <p>Linhas de assunto tornam seus links mailto mais profissionais e ajudam os destinatários a entender imediatamente o propósito do email.</p>
+                
+                <h4>Exemplo básico de assunto</h4>
+                <p>Aqui está uma consulta comercial com uma linha de assunto clara:</p>
+                <div class="code-example">
+                    <code>mailto:vendas@empresatech.com?subject=Solicitação%20de%20Demo%20do%20Produto</code>
+                </div>
+                
+                <h3 id="encoding-guide">Fundamentos de codificação URL</h3>
+                <p>Caracteres especiais em links mailto devem ser codificados em URL para garantir funcionalidade adequada em todos os clientes de email e navegadores.</p>
+                
+                <h4>Codificações de caracteres comuns</h4>
+                <p>Aqui estão as codificações URL mais frequentemente usadas para links mailto:</p>
+                <ul>
+                    <li><strong>%20</strong> = espaço</li>
+                    <li><strong>%21</strong> = ! (ponto de exclamação)</li>
+                    <li><strong>%22</strong> = " (aspas)</li>
+                    <li><strong>%26</strong> = & (e comercial)</li>
+                    <li><strong>%2C</strong> = , (vírgula)</li>
+                    <li><strong>%3A</strong> = : (dois pontos)</li>
+                    <li><strong>%3F</strong> = ? (ponto de interrogação)</li>
+                    <li><strong>%0A</strong> = quebra de linha</li>
+                </ul>
+                
+                <h4>Por que a codificação é importante</h4>
+                <p>A codificação adequada garante que seus links mailto funcionem consistentemente em:</p>
+                <ul>
+                    <li>Diferentes navegadores web (Chrome, Firefox, Safari, Edge)</li>
+                    <li>Vários clientes de email (Gmail, Outlook, Apple Mail, Thunderbird)</li>
+                    <li>Plataformas móveis e desktop</li>
+                </ul>
+                
+                <p><strong>💡 Dica profissional:</strong> Use nosso gerador de links mailto acima para lidar automaticamente com toda a codificação!</p>
+                
+                <h3 id="complete-emails">Modelos de email completos</h3>
+                <p>Combinar linhas de assunto e conteúdo do corpo cria modelos de email abrangentes que economizam tempo para você e seus destinatários.</p>
+                
+                <h4>Modelo de suporte ao cliente</h4>
+                <p>Perfeito para páginas de help desk ou suporte:</p>
+                <div class="code-example">
+                    <code>mailto:suporte@suaempresa.com?subject=Solicitação%20de%20Suporte%20Técnico&body=Por%20favor%20descreva%20seu%20problema%20em%20detalhes%3A%0A%0ADispositivo%3A%20%0ANavegador%3A%20%0APassos%20para%20reproduzir%3A%20</code>
+                </div>
+                
+                <h3 id="professional-examples">Casos de uso profissionais</h3>
+                <p>Aqui está um modelo de email comercial abrangente com todos os parâmetros:</p>
+                
+                <h4>Email de colaboração de projeto</h4>
+                <ul>
+                    <li><strong>Para:</strong> gerente.projeto@empresa.com</li>
+                    <li><strong>Cc:</strong> lider.equipe@empresa.com</li>
+                    <li><strong>Cco:</strong> arquivo@empresa.com</li>
+                    <li><strong>Assunto:</strong> Submissão de Proposta de Projeto</li>
+                    <li><strong>Corpo:</strong> Caro Gerente de Projeto, Estou submetendo nossa proposta de projeto Q4 para revisão. Por favor encontre os detalhes principais abaixo e me informe se você precisa de informações adicionais. Atenciosamente, [Seu Nome]</li>
+                </ul>
+                <div class="code-example">
+                    <code>mailto:gerente.projeto@empresa.com?cc=lider.equipe@empresa.com&bcc=arquivo@empresa.com&subject=Submissão%20de%20Proposta%20de%20Projeto&body=Caro%20Gerente%20de%20Projeto%2C%0A%0AEstou%20submetendo%20nossa%20proposta%20de%20projeto%20Q4%20para%20revisão.%20Por%20favor%20encontre%20os%20detalhes%20principais%20abaixo%20e%20me%20informe%20se%20você%20precisa%20de%20informações%20adicionais.%0A%0AAtenciosamente%2C%0A%5BSeu%20Nome%5D</code>
+                </div>
+                
+                <h4>Modelos profissionais adicionais</h4>
+                <p><strong>Solicitação de reunião:</strong></p>
+                <div class="code-example">
+                    <code>mailto:colega@empresa.com?subject=Solicitação%20de%20Reunião%20-%20Revisão%20de%20Projeto&body=Olá%2C%0A%0APodemos%20agendar%20uma%20reunião%20de%2030%20minutos%20para%20discutir%20o%20status%20do%20projeto%3F%0A%0AHorários%20disponíveis%3A%0A-%20Amanhã%2014h-16h%0A-%20Sexta%2010h-12h%0A%0AObrigado%21</code>
+                </div>
+                
+                <h3 id="html-implementation">Implementação HTML</h3>
+                <p>Converter seu link mailto em HTML clicável requer estrutura e atributos de tag âncora adequados.</p>
+                
+                <h4>Estrutura HTML básica</h4>
+                <p>Tags âncora HTML consistem em elementos de abertura e fechamento:</p>
+                <div class="code-example">
+                    <code>&lt;a&gt;&lt;/a&gt;</code>
+                </div>
+                
+                <h4>Adicionando texto do link</h4>
+                <p>O texto entre as tags torna-se o texto do link clicável:</p>
+                <div class="code-example">
+                    <code>&lt;a&gt;Entre em contato com nossa equipe de vendas&lt;/a&gt;</code>
+                </div>
+                
+                <h4>Adicionando o atributo href</h4>
+                <p>O atributo href contém seu link mailto:</p>
+                <div class="code-example">
+                    <code>&lt;a href="mailto:vendas@empresa.com?subject=Consulta%20de%20Vendas"&gt;Entre em contato com nossa equipe de vendas&lt;/a&gt;</code>
+                </div>
+                
+                <h4>HTML aprimorado com acessibilidade</h4>
+                <p>Para melhor acessibilidade e experiência do usuário, adicione atributos descritivos:</p>
+                <div class="code-example">
+                    <code>&lt;a href="mailto:suporte@empresa.com?subject=Suporte%20Técnico" title="Nos envie um email para suporte técnico" aria-label="Email para equipe de suporte técnico"&gt;Obter Suporte Técnico&lt;/a&gt;</code>
+                </div>
+                
+                <h4>Exemplo ao vivo</h4>
+                <p>Aqui está como o link aparece para os usuários:</p>
+                <div class="test-box">
+                    <a href="mailto:demo@empresa.com?subject=Solicitação%20de%20Demo" class="test-link">Solicitar Demo</a>
+                </div>
+                
+                <h3 id="best-practices">Melhores práticas e dicas</h3>
+                
+                <h4>Compatibilidade multiplataforma</h4>
+                <ul>
+                    <li><strong>Teste extensivamente:</strong> Verifique se os links funcionam nos principais clientes de email</li>
+                    <li><strong>Mantenha simples:</strong> Evite combinações de parâmetros excessivamente complexas</li>
+                    <li><strong>Mobile-first:</strong> Garanta que os links funcionem bem em dispositivos móveis</li>
+                    <li><strong>Opções de fallback:</strong> Forneça métodos de contato alternativos</li>
+                </ul>
+                
+                <h4>Diretrizes de experiência do usuário</h4>
+                <ul>
+                    <li><strong>Texto de link claro:</strong> Use texto descritivo que explique a ação</li>
+                    <li><strong>Padrões razoáveis:</strong> Pré-preencha informações úteis sem ser esmagador</li>
+                    <li><strong>Consideração de privacidade:</strong> Seja cuidadoso com as informações que você pré-popula</li>
+                    <li><strong>Tom profissional:</strong> Use linguagem apropriada para seu público</li>
+                </ul>
+                
+                <h4>Considerações técnicas</h4>
+                <ul>
+                    <li><strong>Limites de caracteres:</strong> Alguns clientes de email têm restrições de comprimento de URL</li>
+                    <li><strong>Precisão de codificação:</strong> Sempre codifique adequadamente caracteres especiais</li>
+                    <li><strong>Consciência de segurança:</strong> Evite incluir informações sensíveis em URLs</li>
+                    <li><strong>Rastreamento de analytics:</strong> Considere como rastrear o engajamento de links mailto</li>
+                </ul>
+                
+                <h3 id="final-thoughts">Considerações finais</h3>
+                <p>Links mailto são uma ferramenta poderosa para agilizar a comunicação entre sites e usuários. Quando implementados corretamente, eles fornecem uma ponte perfeita entre conteúdo web e comunicação por email.</p>
+                
+                <p>Lembre-se de que a chave para uma implementação mailto bem-sucedida está em entender as necessidades dos seus usuários, testar em plataformas e manter a simplicidade enquanto fornece valor.</p>
+                
+                <p><strong>Recursos adicionais:</strong></p>
+                <ul>
+                    <li><a href="https://tools.ietf.org/html/rfc6068" target="_blank" rel="noopener">Especificação RFC 6068</a></li>
+                    <li><a href="https://html.spec.whatwg.org/multipage/links.html#links" target="_blank" rel="noopener">Especificação HTML W3C</a></li>
+                    <li><a href="https://www.emailonacid.com/" target="_blank" rel="noopener">Ferramentas de teste de compatibilidade de clientes de email</a></li>
+                    <li><a href="https://www.w3schools.com/tags/ref_urlencode.asp" target="_blank" rel="noopener">Guias de referência de codificação URL</a></li>
+                </ul>
+                
+                <p>Seja você construindo formulários de contato, sistemas de suporte ou campanhas de marketing, links mailto bem elaborados podem melhorar significativamente o engajamento do usuário e a eficiência da comunicação.</p>
+            </div>
+        </section>
+
+        <section class="donation-section">
+            <div class="donation-content">
+                <h2>Uma última coisa...</h2>
+                <p>Construir este <strong>Gerador de Links Mailto</strong> foi um projeto de paixão para mim. É completamente gratuito para usar, e espero que economize seu tempo e torne seus fluxos de trabalho de email mais eficientes.</p>
+                
+                <p>Se esta ferramenta foi útil para você, considere apoiar seu desenvolvimento com uma pequena doação de café. Cada contribuição me ajuda a dedicar mais tempo para melhorar e manter ferramentas como esta.</p>
+                
+                <p>Seu apoio significa o mundo para mim! ☕✨</p>
+                
+                <div class="donation-buttons" style="margin: 2rem 0;">
+                    <a href="#" class="coffee-btn" onclick="donate(4)">Me pague um café</a>
+                </div>
+                
+                <p style="margin-top: 2rem; font-style: italic;">Obrigado por usar minha ferramenta, e espero que traga eficiência aos seus projetos!</p>
+                
+                <p style="margin-top: 1rem; color: #007bff; font-weight: 500;">—John</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">Dúvidas ou feedback? Me contate em <a href="mailto:john@chefbusiness.co" style="color: #007bff; text-decoration: none;">john@chefbusiness.co</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 MailtoGen Pro. Todos os direitos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Serviço</a>
+                    <a href="#">Contato</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Language Selector - Fixed Bottom Left -->
+    <div class="language-selector">
+        <button class="language-btn" id="languageBtn">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='24' height='30' fill='%23046A38'/%3E%3Crect x='24' width='36' height='30' fill='%23DA020E'/%3E%3C/svg%3E" alt="Português" class="flag-icon" id="currentFlag">
+            <span id="currentLang">PT</span>
+            <span class="dropdown-arrow">▼</span>
+        </button>
+        <div class="language-menu" id="languageMenu">
+            <div class="language-option" data-lang="en">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23012169'/%3E%3Cpath d='M0 0l60 30M60 0L0 30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0l60 30M60 0L0 30' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E" alt="English" class="flag-icon">
+                <span>English</span>
+            </div>
+            <div class="language-option" data-lang="es">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23AA151B'/%3E%3Crect width='60' height='10' y='10' fill='%23F1BF00'/%3E%3C/svg%3E" alt="Español" class="flag-icon">
+                <span>Español</span>
+            </div>
+            <div class="language-option" data-lang="zh">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23DE2910'/%3E%3Cpolygon fill='%23FFDE00' points='12,6 14.5,12.5 21,12.5 16,16.5 18.5,23 12,19 5.5,23 8,16.5 3,12.5 9.5,12.5'/%3E%3C/svg%3E" alt="中文" class="flag-icon">
+                <span>中文</span>
+            </div>
+            <div class="language-option" data-lang="fr">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='20' height='30' fill='%23002395'/%3E%3Crect x='20' width='20' height='30' fill='%23FFFFFF'/%3E%3Crect x='40' width='20' height='30' fill='%23ED2939'/%3E%3C/svg%3E" alt="Français" class="flag-icon">
+                <span>Français</span>
+            </div>
+            <div class="language-option" data-lang="de">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='10' fill='%23000000'/%3E%3Crect y='10' width='60' height='10' fill='%23DD0000'/%3E%3Crect y='20' width='60' height='10' fill='%23FFCE00'/%3E%3C/svg%3E" alt="Deutsch" class="flag-icon">
+                <span>Deutsch</span>
+            </div>
+            <div class="language-option" data-lang="pt">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='24' height='30' fill='%23046A38'/%3E%3Crect x='24' width='36' height='30' fill='%23DA020E'/%3E%3C/svg%3E" alt="Português" class="flag-icon">
+                <span>Português</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

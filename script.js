@@ -170,11 +170,12 @@ function setupLanguageSelector() {
             
             // Mapeo de idiomas a subdirectorios
             const languageUrls = {
-                'en': '/',
-                'es': '/es/',
-                'de': '/de/',
-                'fr': '/fr/',
-                'zh': '/zh/'
+                'en': 'https://mailtogenpro.com/',
+                'es': 'https://mailtogenpro.com/es/',
+                'de': 'https://mailtogenpro.com/de/',
+                'fr': 'https://mailtogenpro.com/fr/',
+                'zh': 'https://mailtogenpro.com/zh/',
+                'pt': 'https://mailtogenpro.com/pt/'
             };
             
             // Redirigir al subdirectorio correspondiente
