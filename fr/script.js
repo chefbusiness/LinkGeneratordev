@@ -200,11 +200,15 @@ function setupLanguageSelector() {
             
             // Mappage des langues vers les subdirectories
             const languageUrls = {
-                'en': '/',
-                'es': '/es/',
-                'de': '/de/',
-                'fr': '/fr/',
-                'zh': '/zh/'
+                'en': 'https://mailtogenpro.com/',
+                'es': 'https://mailtogenpro.com/es/',
+                'de': 'https://mailtogenpro.com/de/',
+                'fr': 'https://mailtogenpro.com/fr/',
+                'zh': 'https://mailtogenpro.com/zh/',
+                'pt': 'https://mailtogenpro.com/pt/',
+                'ja': 'https://mailtogenpro.com/ja/',
+                'it': 'https://mailtogenpro.com/it/',
+                'ru': 'https://mailtogenpro.com/ru/'
             };
             
             // Rediriger vers le subdirectory correspondant
