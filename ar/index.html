@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مولد روابط البريد الإلكتروني - إنشاء روابط بريد إلكتروني احترافية فورية</title>
+    <meta name="description" content="إنشاء روابط mailto احترافية مع الموضوع والمحتوى وCC وBCC والمزيد مملوء مسبقاً. مثالي للمطورين والمسوقين والشركات. أداة مجانية عبر الإنترنت.">
+    <meta name="keywords" content="مولد روابط mailto، منشئ روابط البريد الإلكتروني، URL mailto، التسويق عبر البريد الإلكتروني، تطوير الويب، نماذج الاتصال">
+    <meta name="author" content="Mailto Link Generator">
+    <link rel="canonical" href="https://mailtogenpro.com/ar/">
+    
+    <!-- Hreflang tags -->
+    <link rel="alternate" hreflang="en" href="https://mailtogenpro.com/">
+    <link rel="alternate" hreflang="es" href="https://mailtogenpro.com/es/">
+    <link rel="alternate" hreflang="de" href="https://mailtogenpro.com/de/">
+    <link rel="alternate" hreflang="fr" href="https://mailtogenpro.com/fr/">
+    <link rel="alternate" hreflang="zh" href="https://mailtogenpro.com/zh/">
+    <link rel="alternate" hreflang="ar" href="https://mailtogenpro.com/ar/">
+    <link rel="alternate" hreflang="pt" href="https://mailtogenpro.com/pt/">
+    <link rel="alternate" hreflang="ja" href="https://mailtogenpro.com/ja/">
+    <link rel="alternate" hreflang="it" href="https://mailtogenpro.com/it/">
+    <link rel="alternate" hreflang="ru" href="https://mailtogenpro.com/ru/">
+    <link rel="alternate" hreflang="x-default" href="https://mailtogenpro.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../favicon.ico">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-text">
+                        <h1>مولد روابط البريد الإلكتروني</h1>
+                        <p class="subtitle">إنشاء روابط بريد إلكتروني احترافية فورية</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="generator-section">
+                <form id="mailtoForm" class="mailto-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="to">إلى</label>
+                            <input type="email" id="to" placeholder="recipient@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="cc">نسخة</label>
+                            <input type="email" id="cc" placeholder="copy@example.com">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bcc">نسخة مخفية</label>
+                            <input type="email" id="bcc" placeholder="hidden_copy@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="linkText">نص الرابط</label>
+                            <input type="text" id="linkText" placeholder="إرسال بريد إلكتروني" value="إرسال بريد إلكتروني">
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="subject">الموضوع</label>
+                        <input type="text" id="subject" placeholder="موضوع البريد الإلكتروني">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="body">المحتوى</label>
+                        <textarea id="body" rows="4" placeholder="محتوى البريد الإلكتروني..."></textarea>
+                    </div>
+                    <button type="button" class="generate-btn" onclick="generateMailto()">إنشاء رابط mailto</button>
+                </form>
+
+                <div class="results-section" id="resultsSection" style="display: none;">
+                    <div class="result-group">
+                        <h3>رابط mailto</h3>
+                        <div class="result-box">
+                            <code id="mailtoLink"></code>
+                            <button class="copy-btn" onclick="copyToClipboard('mailtoLink')">نسخ</button>
+                        </div>
+                    </div>
+
+                    <div class="result-group">
+                        <h3>كود HTML</h3>
+                        <div class="result-box">
+                            <code id="htmlCode"></code>
+                            <button class="copy-btn" onclick="copyToClipboard('htmlCode')">نسخ</button>
+                        </div>
+                    </div>
+
+                    <div class="result-group">
+                        <h3>اختبار الرابط</h3>
+                        <div class="test-box">
+                            <a id="previewLink" href="#" class="test-link">
+                                <span id="previewText">إرسال بريد إلكتروني</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- First Donation Section - After Generator -->
+        <section class="donation-section" style="background-color: #f8f9fa; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6;">
+            <div class="container">
+                <div class="donation-content">
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">ادعم هذا المشروع</h2>
+                    
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">إذا كانت هذه الأداة مفيدة لك، فكر في دعم تطويرها بتبرع صغير.</p>
+                    
+                    <div class="donation-buttons" style="margin-bottom: 2rem;">
+                        <a href="#" class="coffee-btn" onclick="donate(4)" style="font-size: 1.1rem; padding: 1rem 2.5rem;">اشتري لي قهوة ☕</a>
+                    </div>
+                    
+                    <p style="font-size: 1rem; color: #666; margin-bottom: 1.5rem;">للأشخاص الكرماء الذين تبرعوا بالفعل<br>
+                    شكراً! ❤️</p>
+                
+                <p style="font-size: 1.1rem; font-weight: 500;">الأهم من ذلك، دعني أخبرك عن روابط mailto حتى تعرف كيف<br>
+                <strong>تنشئها بنفسك</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <p style="margin-bottom: 2rem; font-style: italic;">أتقن فن روابط mailto مع دليلنا الشامل. تعلم إنشاء روابط بريد إلكتروني احترافية تعمل بشكل مثالي على جميع المنصات وعملاء البريد الإلكتروني.</p>
+                
+                <div class="table-of-contents">
+                    <h3>دليل شامل لروابط Mailto</h3>
+                    <ul>
+                        <li><a href="#understanding-mailto">فهم روابط mailto</a></li>
+                        <li><a href="#basic-syntax">صيغة mailto الأساسية</a></li>
+                        <li><a href="#simple-email">إنشاء روابط بريد إلكتروني بسيطة</a></li>
+                        <li><a href="#advanced-recipients">إدارة المستلمين المتقدمة</a></li>
+                        <li><a href="#empty-recipient">التعامل مع المستلمين الفارغين</a></li>
+                        <li><a href="#parameter-structure">بنية المعاملات والصيغة</a></li>
+                        <li><a href="#subject-lines">إضافة سطور الموضوع</a></li>
+                        <li><a href="#encoding-guide">أساسيات ترميز URL</a></li>
+                        <li><a href="#complete-emails">قوالب بريد إلكتروني كاملة</a></li>
+                        <li><a href="#professional-examples">حالات الاستخدام المهنية</a></li>
+                        <li><a href="#html-implementation">تنفيذ HTML</a></li>
+                        <li><a href="#best-practices">أفضل الممارسات والنصائح</a></li>
+                        <li><a href="#final-thoughts">أفكار أخيرة</a></li>
+                    </ul>
+                </div>
+
+                <h2 id="understanding-mailto">فهم روابط mailto</h2>
+                <p>رابط mailto هو رابط HTML قوي يفتح فوراً عميل البريد الإلكتروني الافتراضي للمستخدم مع معلومات مملوءة مسبقاً. هذا يلغي الحاجة للمستخدمين لنسخ عناوين البريد الإلكتروني يدوياً، مما يجعل التواصل سلساً ومهنياً.</p>
+                <p>سنستكشف كلاً من البنية التقنية والتنفيذ العملي لمساعدتك في إنشاء روابط بريد إلكتروني فعالة.</p>
+                
+                <h3 id="basic-syntax">صيغة mailto الأساسية</h3>
+                <p>كل رابط mailto يبدأ بمعرف البروتوكول:</p>
+                <div class="code-example">
+                    <code>mailto:</code>
+                </div>
+                
+                <h3 id="simple-email">إنشاء روابط بريد إلكتروني بسيطة</h3>
+                <p>الشكل الأساسي يتضمن فقط عنوان البريد الإلكتروني للمستلم مباشرة بعد النقطتين:</p>
+                <div class="code-example">
+                    <code>mailto:contact@yourcompany.com</code>
+                </div>
+                <p>هذا ينشئ رابطاً قابلاً للنقر يفتح عميل البريد الإلكتروني للمستخدم مع حقل المستلم مملوء مسبقاً.</p>
+                
+                <h3 id="advanced-recipients">إدارة المستلمين المتقدمة</h3>
+                <p>بينما المستلمون المفردون أكثر موثوقية، يمكنك تضمين مستلمين متعددين باستخدام تقنيات محددة. ومع ذلك، التوافق يختلف بين عملاء البريد الإلكتروني، لذا الاختبار الشامل ضروري.</p>
+                
+                <h4>مستلمون متعددون في حقل TO</h4>
+                <p>للمستلمين الرئيسيين المتعددين، افصل عناوين البريد الإلكتروني بفواصل (بدون مسافات):</p>
+                <div class="code-example">
+                    <code>mailto:manager@company.com,team@company.com,hr@company.com</code>
+                </div>
+                
+                <h4>طريقة الفاصل البديل</h4>
+                <p>إذا لم تعمل الفواصل مع عملاء بريد إلكتروني معينين، جرب الفاصلة المنقوطة:</p>
+                <div class="code-example">
+                    <code>mailto:sales@company.com;support@company.com;billing@company.com</code>
+                </div>
+                
+                <h4>النهج الموصى به: المستلمون الموزعون</h4>
+                <p>الطريقة الأكثر موثوقية توزع المستلمين بين حقول TO وCC وBCC:</p>
+                <div class="code-example">
+                    <code>mailto:primary@company.com?cc=secondary@company.com&bcc=archive@company.com</code>
+                </div>
+                <p><strong>نصيحة محترف:</strong> اختبر دائماً روابط mailto في عملاء بريد إلكتروني مختلفين (Gmail، Outlook، Apple Mail) قبل النشر.</p>
+                
+                <h3 id="empty-recipient">التعامل مع المستلمين الفارغين</h3>
+                <p>إنشاء روابط mailto بدون مستلمين محددين مسبقاً يسمح للمستخدمين باختيار مستلميهم الخاصين. رغم أنه أقل شيوعاً، هذا النهج له حالات استخدام محددة مثل أزرار 'مشاركة عبر البريد الإلكتروني'.</p>
+                
+                <h4>تنسيق المستلم الفارغ القياسي</h4>
+                <p>النهج الأكثر توافقاً يستخدم علامة استفهام مباشرة بعد mailto:</p>
+                <div class="code-example">
+                    <code>mailto:?subject=تحقق%20من%20هذا&body=اعتقدت%20أن%20هذا%20قد%20يهمك</code>
+                </div>
+                
+                <h4>التنسيقات البديلة</h4>
+                <p>بعض عملاء البريد الإلكتروني يقبلون هذه الاختلافات:</p>
+                <div class="code-example">
+                    <code>mailto: ?subject=اشتراك%20النشرة%20الإخبارية</code>
+                </div>
+                <div class="code-example">
+                    <code>mailto:?to=&subject=نموذج%20الاتصال</code>
+                </div>
+                
+                <p><strong>مهم:</strong> روابط المستلم الفارغ لها توافق محدود. اختبر بشمولية قبل التنفيذ.</p>
+                
+                <h3 id="parameter-structure">بنية المعاملات والصيغة</h3>
+                <p>روابط mailto تستخدم صيغة معاملات URL مع محددات محددة:</p>
+                <ul>
+                    <li><strong>علامة الاستفهام (?):</strong> تفصل عنوان البريد الإلكتروني عن المعامل الأول</li>
+                    <li><strong>العطف (&):</strong> يفصل المعاملات الإضافية</li>
+                </ul>
+                
+                <h4>أمثلة على بنية المعاملات</h4>
+                <div class="code-example">
+                    <code>mailto:email@domain.com</code><br>
+                    <code>mailto:email@domain.com?subject=الموضوع</code><br>
+                    <code>mailto:email@domain.com?subject=الموضوع&body=الرسالة</code><br>
+                    <code>mailto:email@domain.com?cc=copy@domain.com&bcc=hidden@domain.com&subject=الموضوع&body=الرسالة</code>
+                </div>
+                
+                <h3 id="subject-lines">إضافة سطور الموضوع</h3>
+                <p>سطور الموضوع تجعل روابط mailto أكثر احترافية وتساعد المستلمين على فهم غرض البريد الإلكتروني فوراً.</p>
+                
+                <h4>مثال أساسي للموضوع</h4>
+                <p>إليك استفسار تجاري مع سطر موضوع واضح:</p>
+                <div class="code-example">
+                    <code>mailto:sales@techcompany.com?subject=طلب%20عرض%20توضيحي%20للمنتج</code>
+                </div>
+                
+                <h3 id="encoding-guide">أساسيات ترميز URL</h3>
+                <p>الأحرف الخاصة في روابط mailto يجب ترميزها كـ URL لضمان الوظائف المناسبة في جميع عملاء البريد الإلكتروني والمتصفحات.</p>
+                
+                <h4>ترميزات الأحرف الشائعة</h4>
+                <p>إليك ترميزات URL الأكثر استخداماً لروابط mailto:</p>
+                <ul>
+                    <li><strong>%20</strong> = مسافة</li>
+                    <li><strong>%21</strong> = ! (علامة تعجب)</li>
+                    <li><strong>%22</strong> = " (اقتباس)</li>
+                    <li><strong>%26</strong> = & (عطف)</li>
+                    <li><strong>%2C</strong> = , (فاصلة)</li>
+                    <li><strong>%3A</strong> = : (نقطتان)</li>
+                    <li><strong>%3F</strong> = ? (علامة استفهام)</li>
+                    <li><strong>%0A</strong> = سطر جديد</li>
+                </ul>
+                
+                <h4>لماذا الترميز مهم</h4>
+                <p>الترميز المناسب يضمن أن روابط mailto تعمل بثبات في:</p>
+                <ul>
+                    <li>متصفحات ويب مختلفة (Chrome، Firefox، Safari، Edge)</li>
+                    <li>عملاء بريد إلكتروني متنوعين (Gmail، Outlook، Apple Mail، Thunderbird)</li>
+                    <li>منصات محمولة وسطح المكتب</li>
+                </ul>
+                
+                <p><strong>💡 نصيحة محترف:</strong> استخدم مولد روابط mailto أعلاه للتعامل مع كل الترميز تلقائياً!</p>
+                
+                <h3 id="complete-emails">قوالب بريد إلكتروني كاملة</h3>
+                <p>دمج سطور الموضوع ومحتوى النص ينشئ قوالب بريد إلكتروني كاملة توفر الوقت لك ولمستلميك.</p>
+                
+                <h4>قالب دعم العملاء</h4>
+                <p>مثالي لصفحات مكتب المساعدة أو الدعم:</p>
+                <div class="code-example">
+                    <code>mailto:support@yourcompany.com?subject=طلب%20دعم%20تقني&body=يرجى%20وصف%20مشكلتك%20بالتفصيل%3A%0A%0Aالجهاز%3A%20%0Aالمتصفح%3A%20%0Aخطوات%20إعادة%20الإنتاج%3A%20</code>
+                </div>
+                
+                <h3 id="professional-examples">حالات الاستخدام المهنية</h3>
+                <p>إليك قالب بريد إلكتروني تجاري كامل مع جميع المعاملات:</p>
+                
+                <h4>بريد إلكتروني للتعاون في المشروع</h4>
+                <ul>
+                    <li><strong>إلى:</strong> project.manager@company.com</li>
+                    <li><strong>نسخة:</strong> team.lead@company.com</li>
+                    <li><strong>نسخة مخفية:</strong> archive@company.com</li>
+                    <li><strong>الموضوع:</strong> تقديم اقتراح المشروع</li>
+                    <li><strong>المحتوى:</strong> عزيزي مدير المشروع، أرسل اقتراح مشروع الربع الرابع للمراجعة. يرجى العثور على التفاصيل الرئيسية أدناه وإعلامي إذا كنت بحاجة لمعلومات إضافية. مع أطيب التحيات، [اسمك]</li>
+                </ul>
+                <div class="code-example">
+                    <code>mailto:project.manager@company.com?cc=team.lead@company.com&bcc=archive@company.com&subject=تقديم%20اقتراح%20المشروع&body=عزيزي%20مدير%20المشروع%2C%0A%0Aأرسل%20اقتراح%20مشروع%20الربع%20الرابع%20للمراجعة.%20يرجى%20العثور%20على%20التفاصيل%20الرئيسية%20أدناه%20وإعلامي%20إذا%20كنت%20بحاجة%20لمعلومات%20إضافية.%0A%0Aمع%20أطيب%20التحيات%2C%0A%5Bاسمك%5D</code>
+                </div>
+                
+                <h4>قوالب مهنية إضافية</h4>
+                <p><strong>طلب اجتماع:</strong></p>
+                <div class="code-example">
+                    <code>mailto:colleague@company.com?subject=طلب%20اجتماع%20-%20مراجعة%20المشروع&body=مرحباً%2C%0A%0Aهل%20يمكننا%20جدولة%20اجتماع%20لمدة%2030%20دقيقة%20لمناقشة%20حالة%20المشروع%3F%0A%0Aالأوقات%20المتاحة%3A%0A-%20غداً%202-4%20مساءً%0A-%20الجمعة%2010%20صباحاً-12%20ظهراً%0A%0Aشكراً!</code>
+                </div>
+                
+                <h3 id="html-implementation">تنفيذ HTML</h3>
+                <p>تحويل رابط mailto إلى HTML قابل للنقر يتطلب بنية علامة ربط مناسبة وخصائص.</p>
+                
+                <h4>بنية HTML الأساسية</h4>
+                <p>علامات الربط HTML تتكون من عناصر فتح وإغلاق:</p>
+                <div class="code-example">
+                    <code>&lt;a&gt;&lt;/a&gt;</code>
+                </div>
+                
+                <h4>إضافة نص الرابط</h4>
+                <p>النص بين العلامات يصبح نص الرابط القابل للنقر:</p>
+                <div class="code-example">
+                    <code>&lt;a&gt;تواصل مع فريق المبيعات&lt;/a&gt;</code>
+                </div>
+                
+                <h4>إضافة خاصية href</h4>
+                <p>خاصية href تحتوي على رابط mailto:</p>
+                <div class="code-example">
+                    <code>&lt;a href="mailto:sales@company.com?subject=استفسار%20المبيعات"&gt;تواصل مع فريق المبيعات&lt;/a&gt;</code>
+                </div>
+                
+                <h4>HTML محسن مع إمكانية الوصول</h4>
+                <p>لإمكانية وصول أفضل وتجربة مستخدم، أضف خصائص وصفية:</p>
+                <div class="code-example">
+                    <code>&lt;a href="mailto:support@company.com?subject=الدعم%20التقني" title="أرسل لنا بريداً إلكترونياً للدعم التقني" aria-label="بريد إلكتروني لفريق الدعم التقني"&gt;الحصول على الدعم التقني&lt;/a&gt;</code>
+                </div>
+                
+                <h4>مثال مباشر</h4>
+                <p>هكذا يظهر الرابط للمستخدمين:</p>
+                <div class="test-box">
+                    <a href="mailto:demo@company.com?subject=طلب%20عرض%20توضيحي" class="test-link">طلب عرض توضيحي</a>
+                </div>
+                
+                <h3 id="best-practices">أفضل الممارسات والنصائح</h3>
+                
+                <h4>التوافق متعدد المنصات</h4>
+                <ul>
+                    <li><strong>اختبر بشمولية:</strong> تحقق من أن الروابط تعمل في عملاء البريد الإلكتروني الرئيسيين</li>
+                    <li><strong>حافظ على البساطة:</strong> تجنب مجموعات المعاملات المعقدة جداً</li>
+                    <li><strong>الهاتف المحمول أولاً:</strong> تأكد من أن الروابط تعمل جيداً على الأجهزة المحمولة</li>
+                    <li><strong>خيارات احتياطية:</strong> وفر طرق اتصال بديلة</li>
+                </ul>
+                
+                <h4>إرشادات تجربة المستخدم</h4>
+                <ul>
+                    <li><strong>نص رابط واضح:</strong> استخدم نصاً وصفياً يشرح الإجراء</li>
+                    <li><strong>افتراضيات معقولة:</strong> املأ معلومات مفيدة مسبقاً دون إرهاق</li>
+                    <li><strong>اعتبار الخصوصية:</strong> كن حذراً بشأن المعلومات التي تملؤها مسبقاً</li>
+                    <li><strong>نبرة مهنية:</strong> استخدم لغة مناسبة لجمهورك</li>
+                </ul>
+                
+                <h4>اعتبارات تقنية</h4>
+                <ul>
+                    <li><strong>حدود الأحرف:</strong> بعض عملاء البريد الإلكتروني لديهم قيود على طول URL</li>
+                    <li><strong>دقة الترميز:</strong> رمز دائماً الأحرف الخاصة بشكل مناسب</li>
+                    <li><strong>وعي الأمان:</strong> تجنب تضمين معلومات حساسة في URLs</li>
+                    <li><strong>تتبع التحليلات:</strong> فكر في كيفية تتبع تفاعل روابط mailto</li>
+                </ul>
+                
+                <h3 id="final-thoughts">أفكار أخيرة</h3>
+                <p>روابط mailto أداة قوية لتبسيط التواصل بين المواقع والمستخدمين. عند تنفيذها بشكل صحيح، توفر جسراً سلساً بين محتوى الويب والتواصل عبر البريد الإلكتروني.</p>
+                
+                <p>تذكر أن مفتاح النجاح في تنفيذ mailto يكمن في فهم احتياجات مستخدميك، والاختبار عبر المنصات، والحفاظ على البساطة مع توفير القيمة.</p>
+                
+                <p><strong>موارد إضافية:</strong></p>
+                <ul>
+                    <li><a href="https://tools.ietf.org/html/rfc6068" target="_blank" rel="noopener">مواصفة RFC 6068</a></li>
+                    <li><a href="https://html.spec.whatwg.org/multipage/links.html#links" target="_blank" rel="noopener">مواصفة HTML للـ W3C</a></li>
+                    <li><a href="https://www.emailonacid.com/" target="_blank" rel="noopener">أدوات اختبار توافق عملاء البريد الإلكتروني</a></li>
+                    <li><a href="https://www.w3schools.com/tags/ref_urlencode.asp" target="_blank" rel="noopener">أدلة مرجعية لترميز URL</a></li>
+                </ul>
+                
+                <p>سواء كنت تبني نماذج اتصال أو أنظمة دعم أو حملات تسويقية، روابط mailto المصممة جيداً يمكن أن تحسن بشكل كبير تفاعل المستخدم وكفاءة التواصل.</p>
+            </div>
+        </section>
+
+        <section class="donation-section">
+            <div class="donation-content">
+                <h2>شيء أخير...</h2>
+                <p>بناء <strong>مولد روابط البريد الإلكتروني</strong> هذا كان مشروع شغف بالنسبة لي. إنه مجاني تماماً للاستخدام، وأتمنى أن يوفر لك الوقت ويجعل سير عمل البريد الإلكتروني أكثر كفاءة.</p>
+                
+                <p>إذا كانت هذه الأداة مفيدة لك، فكر في دعم تطويرها بتبرع قهوة صغير. كل مساهمة تساعدني في تخصيص المزيد من الوقت لتحسين وصيانة أدوات مثل هذه.</p>
+                
+                <p>دعمك يعني الكثير بالنسبة لي! ☕✨</p>
+                
+                <div class="donation-buttons" style="margin: 2rem 0;">
+                    <a href="#" class="coffee-btn" onclick="donate(4)">اشتري لي قهوة</a>
+                </div>
+                
+                <p style="margin-top: 2rem; font-style: italic;">شكراً لاستخدام أداتي، وأتمنى أن تضيف الكفاءة لمشاريعك!</p>
+                
+                <p style="margin-top: 1rem; color: #007bff; font-weight: 500;">—جون</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">أسئلة أو تعليقات؟ راسلني على <a href="mailto:john@chefbusiness.co" style="color: #007bff; text-decoration: none;">john@chefbusiness.co</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 MailtoGen Pro. جميع الحقوق محفوظة.</p>
+                <div class="footer-links">
+                    <a href="#">سياسة الخصوصية</a>
+                    <a href="#">شروط الخدمة</a>
+                    <a href="#">اتصل بنا</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Language Selector - Fixed Bottom Left -->
+    <div class="language-selector">
+        <button class="language-btn" id="languageBtn">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23006C35'/%3E%3Crect width='60' height='20' y='10' fill='%23FFFFFF'/%3E%3Crect width='60' height='10' y='20' fill='%23000000'/%3E%3Ctext x='30' y='18' text-anchor='middle' fill='%23FFFFFF' font-size='8' font-family='Arial'%3Eلا إله إلا الله%3C/text%3E%3C/svg%3E" alt="العربية" class="flag-icon" id="currentFlag">
+            <span id="currentLang">AR</span>
+            <span class="dropdown-arrow">▼</span>
+        </button>
+        <div class="language-menu" id="languageMenu">
+            <div class="language-option" data-lang="en">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23012169'/%3E%3Cpath d='M0 0l60 30M60 0L0 30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0l60 30M60 0L0 30' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E" alt="English" class="flag-icon">
+                <span>English</span>
+            </div>
+            <div class="language-option" data-lang="es">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23AA151B'/%3E%3Crect width='60' height='10' y='10' fill='%23F1BF00'/%3E%3C/svg%3E" alt="Español" class="flag-icon">
+                <span>Español</span>
+            </div>
+            <div class="language-option" data-lang="zh">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23DE2910'/%3E%3Cpolygon fill='%23FFDE00' points='12,6 14.5,12.5 21,12.5 16,16.5 18.5,23 12,19 5.5,23 8,16.5 3,12.5 9.5,12.5'/%3E%3C/svg%3E" alt="中文" class="flag-icon">
+                <span>中文</span>
+            </div>
+            <div class="language-option" data-lang="fr">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='20' height='30' fill='%23002395'/%3E%3Crect x='20' width='20' height='30' fill='%23FFFFFF'/%3E%3Crect x='40' width='20' height='30' fill='%23ED2939'/%3E%3C/svg%3E" alt="Français" class="flag-icon">
+                <span>Français</span>
+            </div>
+            <div class="language-option" data-lang="de">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='10' fill='%23000000'/%3E%3Crect y='10' width='60' height='10' fill='%23DD0000'/%3E%3Crect y='20' width='60' height='10' fill='%23FFCE00'/%3E%3C/svg%3E" alt="Deutsch" class="flag-icon">
+                <span>Deutsch</span>
+            </div>
+            <div class="language-option" data-lang="pt">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='24' height='30' fill='%23046A38'/%3E%3Crect x='24' width='36' height='30' fill='%23DA020E'/%3E%3C/svg%3E" alt="Português" class="flag-icon">
+                <span>Português</span>
+            </div>
+            <div class="language-option" data-lang="ja">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23FFFFFF'/%3E%3Ccircle cx='30' cy='15' r='9' fill='%23BC002D'/%3E%3C/svg%3E" alt="日本語" class="flag-icon">
+                <span>日本語</span>
+            </div>
+            <div class="language-option" data-lang="it">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='20' height='30' fill='%23009246'/%3E%3Crect x='20' width='20' height='30' fill='%23FFFFFF'/%3E%3Crect x='40' width='20' height='30' fill='%23CE2B37'/%3E%3C/svg%3E" alt="Italiano" class="flag-icon">
+                <span>Italiano</span>
+            </div>
+            <div class="language-option" data-lang="ru">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='10' fill='%23FFFFFF'/%3E%3Crect y='10' width='60' height='10' fill='%23D52B1E'/%3E%3Crect y='20' width='60' height='10' fill='%230039A6'/%3E%3C/svg%3E" alt="Русский" class="flag-icon">
+                <span>Русский</span>
+            </div>
+            <div class="language-option" data-lang="ar">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23006C35'/%3E%3Crect width='60' height='20' y='10' fill='%23FFFFFF'/%3E%3Crect width='60' height='10' y='20' fill='%23000000'/%3E%3Ctext x='30' y='18' text-anchor='middle' fill='%23FFFFFF' font-size='8' font-family='Arial'%3Eلا إله إلا الله%3C/text%3E%3C/svg%3E" alt="العربية" class="flag-icon">
+                <span>العربية</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
