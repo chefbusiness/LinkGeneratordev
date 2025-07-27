@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    <!-- English (Default) -->
+<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- Main Pages - English (Default) -->
     <url>
         <loc>https://mailtogenpro.com/</loc>
-        <lastmod>2025-01-25</lastmod>
+        <lastmod>2025-01-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://mailtogenpro.com/" />
@@ -11,62 +14,118 @@
         <xhtml:link rel="alternate" hreflang="de" href="https://mailtogenpro.com/de/" />
         <xhtml:link rel="alternate" hreflang="fr" href="https://mailtogenpro.com/fr/" />
         <xhtml:link rel="alternate" hreflang="zh" href="https://mailtogenpro.com/zh/" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://mailtogenpro.com/it/" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mailtogenpro.com/ja/" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://mailtogenpro.com/pt/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://mailtogenpro.com/ru/" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://mailtogenpro.com/" />
     </url>
-    
+
     <!-- Spanish -->
     <url>
         <loc>https://mailtogenpro.com/es/</loc>
-        <lastmod>2025-01-25</lastmod>
+        <lastmod>2025-01-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mailtogenpro.com/" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://mailtogenpro.com/es/" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://mailtogenpro.com/de/" />
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mailtogenpro.com/fr/" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://mailtogenpro.com/zh/" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://mailtogenpro.com/" />
     </url>
-    
+
     <!-- German -->
     <url>
         <loc>https://mailtogenpro.com/de/</loc>
-        <lastmod>2025-01-25</lastmod>
+        <lastmod>2025-01-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mailtogenpro.com/" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://mailtogenpro.com/es/" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://mailtogenpro.com/de/" />
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mailtogenpro.com/fr/" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://mailtogenpro.com/zh/" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://mailtogenpro.com/" />
     </url>
-    
+
     <!-- French -->
     <url>
         <loc>https://mailtogenpro.com/fr/</loc>
-        <lastmod>2025-01-25</lastmod>
+        <lastmod>2025-01-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mailtogenpro.com/" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://mailtogenpro.com/es/" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://mailtogenpro.com/de/" />
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mailtogenpro.com/fr/" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://mailtogenpro.com/zh/" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://mailtogenpro.com/" />
     </url>
-    
+
     <!-- Chinese -->
     <url>
         <loc>https://mailtogenpro.com/zh/</loc>
-        <lastmod>2025-01-25</lastmod>
+        <lastmod>2025-01-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mailtogenpro.com/" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://mailtogenpro.com/es/" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://mailtogenpro.com/de/" />
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mailtogenpro.com/fr/" />
-        <xhtml:link rel="alternate" hreflang="zh" href="https://mailtogenpro.com/zh/" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://mailtogenpro.com/" />
     </url>
+
+    <!-- Italian -->
+    <url>
+        <loc>https://mailtogenpro.com/it/</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Japanese -->
+    <url>
+        <loc>https://mailtogenpro.com/ja/</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Portuguese -->
+    <url>
+        <loc>https://mailtogenpro.com/pt/</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Russian -->
+    <url>
+        <loc>https://mailtogenpro.com/ru/</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Additional Pages -->
+    <url>
+        <loc>https://mailtogenpro.com/contact.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://mailtogenpro.com/privacy-policy.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://mailtogenpro.com/terms-of-service.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://mailtogenpro.com/cookie-policy.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://mailtogenpro.com/thank-you.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://mailtogenpro.com/cancelled.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
 </urlset>
