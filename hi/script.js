@@ -1,4 +1,4 @@
-// Mailto Link Generator - JavaScript Functions
+// Mailto Link Generator - JavaScript Functions for Hindi
 
 // Main function to generate mailto link
 function generateMailtoLink(validateInput = false) {
@@ -8,21 +8,19 @@ function generateMailtoLink(validateInput = false) {
     const bcc = document.getElementById('bcc').value.trim();
     const subject = document.getElementById('subject').value.trim();
     const body = document.getElementById('body').value.trim();
-    const linkText = document.getElementById('linkText').value.trim() || 'Send email';
+    const linkText = document.getElementById('linkText').value.trim() || 'ईमेल भेजें';
 
     // Only validate when explicitly requested (button click)
     if (validateInput) {
         // Validate that at least 'to' field is filled
         if (!to) {
-            const errorMessage = translationManager ? translationManager.t('form.validation.to_required') : 'Please enter at least one email address in the "To" field';
-            alert(errorMessage);
+            alert('कृपया "प्राप्तकर्ता" फील्ड में कम से कम एक ईमेल पता दर्ज करें');
             return;
         }
 
         // Validate email format only if not empty
         if (to && !isValidEmail(to)) {
-            const errorMessage = translationManager ? translationManager.t('form.validation.invalid_email') : 'Please enter a valid email address';
-            alert(errorMessage);
+            alert('कृपया एक वैध ईमेल पता दर्ज करें');
             return;
         }
     }
@@ -109,9 +107,7 @@ function copyToClipboard(elementId) {
         const button = element.parentNode.querySelector('.copy-btn');
         const originalText = button.textContent;
         
-        // Use translation if available
-        const successMessage = translationManager ? translationManager.t('results.copy_success') : 'Copied!';
-        button.textContent = successMessage;
+        button.textContent = 'कॉपी हो गया!';
         button.style.background = '#28a745';
         
         setTimeout(() => {
@@ -120,8 +116,7 @@ function copyToClipboard(elementId) {
         }, 2000);
     }).catch(function(err) {
         console.error('Error copying: ', err);
-        const errorMessage = translationManager ? translationManager.t('results.copy_error') : 'Error copying to clipboard';
-        alert(errorMessage);
+        alert('क्लिपबोर्ड में कॉपी करने में त्रुटि');
     });
 }
 
@@ -213,28 +208,11 @@ function setupLanguageSelector() {
 }
 
 // Initialize application when DOM is loaded
-document.addEventListener('DOMContentLoaded', async function() {
-    try {
-        // Initialize translation system first
-        if (typeof TranslationManager !== 'undefined') {
-            window.translationManager = new TranslationManager();
-            await window.translationManager.init();
-            console.log('Translation system initialized successfully!');
-        } else {
-            console.warn('TranslationManager not found');
-        }
-        
-        // Setup language selector for subdirectory redirects
-        setupLanguageSelector();
-        
-        // Initialize main app
-        initializeApp();
-        console.log('Mailto Generator initialized successfully!');
-    } catch (error) {
-        console.error('Error initializing application:', error);
-        // Initialize app anyway without translations
-        initializeApp();
-        // Still setup language selector
-        setupLanguageSelector();
-    }
+document.addEventListener('DOMContentLoaded', function() {
+    // Setup language selector for subdirectory redirects
+    setupLanguageSelector();
+    
+    // Initialize main app
+    initializeApp();
+    console.log('Mailto Generator (Hindi) initialized successfully!');
 });
